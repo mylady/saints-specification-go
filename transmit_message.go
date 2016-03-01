@@ -6,7 +6,7 @@ import (
 
 type TransmitMessage struct {
 	MessageId       string
-	MessageType     int
+	MessageType     uint
 	MessageContent  string
 	MessageTime     time.Time
 	MessageReceiver []string

@@ -4,9 +4,9 @@ type ProductInfo struct {
 	ProductName   string
 	ProductId     string
 	DisplayName   string
-	ProductType   int
+	ProductType   uint
 	VersionNumber string
-	VersionCode   int
+	VersionCode   uint
 	InstallPath   string
-	OS            int
+	OS            uint
 }
