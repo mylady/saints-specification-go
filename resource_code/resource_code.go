@@ -41,6 +41,7 @@ const (
 	Hub              = 1031
 	InfopubTerminal  = 1032
 	IptvTerminal     = 1033
+	Detector         = 1034
 
 	//non-device
 	RealVideoSource = 2048
