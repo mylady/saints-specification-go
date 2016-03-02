@@ -2,18 +2,20 @@ package resource_code
 
 const (
 	//front-end of security device
-	Camera              = 0
-	Door                = 1
-	ManuAlarm           = 2
-	CallTerminal        = 3
-	SoundAlarm          = 4
-	IrAlarm             = 5
-	PowerGrid           = 6
-	EnviromentMonitor   = 7
-	DecodeChannel       = 8
-	MatrixChannel       = 9
-	TvwallChannel       = 10
-	VideoAnalyseChannel = 11
+	Camera            = 0
+	Door              = 1
+	ManuAlarm         = 2
+	CallTerminal      = 3
+	SoundAlarm        = 4
+	IrAlarm           = 5
+	PowerGrid         = 6
+	EnviromentMonitor = 7
+
+	//front-end virtual security device
+	DecodeChannel       = 256
+	MatrixChannel       = 257
+	TvwallChannel       = 258
+	VideoAnalyseChannel = 259
 
 	//back-end of security device
 	EncoderHost           = 512
@@ -29,6 +31,7 @@ const (
 	EnviromentMonitorHost = 522
 	UpsHost               = 523
 	VideoAnalyseHost      = 524
+	Detector              = 525
 
 	//other device
 	PersonalComputer = 1024
@@ -41,7 +44,6 @@ const (
 	Hub              = 1031
 	InfopubTerminal  = 1032
 	IptvTerminal     = 1033
-	Detector         = 1034
 
 	//non-device
 	RealVideoSource = 2048
