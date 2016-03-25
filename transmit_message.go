@@ -1,6 +1,7 @@
 package saints_go_specification
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -11,20 +12,11 @@ func (t JsonTime) MarshalJSON() ([]byte, error) {
 	return []byte(timestr), nil
 }
 
-//通信消息
-type TransmitMessage struct {
-	MessageId       string   //消息唯一编号
-	MessageType     int      //消息类型代码
-	MessageContent  string   //具体消息结构体,根据消息类型不同结构不同
-	MessageTime     JsonTime //消息发送事件
-	MessageReceiver []string //消息接受者
-}
-
 type TransmitMessage struct {
 	MessageId       string
 	MessageType     uint
 	MessageContent  string
-	MessageTime     time.Time
+	MessageTime     JsonTime
 	MessageReceiver []string
 }
 
