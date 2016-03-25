@@ -6,5 +6,5 @@ type DigitalLayout struct {
 	FullScreen      bool
 	BackgroundImage string
 	BackgroundAudio string
-	Areas           []*DigitalLayoutArea
+	Areas           []DigitalLayoutArea
 }

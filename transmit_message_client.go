@@ -1,7 +1,7 @@
 package saints_go_specification
 
 type TransmitMessageClient struct {
-	Product      *ProductInfo
+	Product      ProductInfo
 	IPAddresses  []string
 	MacAddresses []string
 }
