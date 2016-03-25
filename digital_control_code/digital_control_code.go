@@ -8,4 +8,7 @@ const (
 	Reboot        = 4
 	Marquee       = 5
 	Speech        = 6
+	ScreenShot    = 7
+	Volume        = 8
+	NtpSync       = 9
 )
