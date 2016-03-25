@@ -4,6 +4,22 @@ import (
 	"time"
 )
 
+type JsonTime time.Time
+
+func (t JsonTime) MarshalJSON() ([]byte, error) {
+	timestr := fmt.Sprintf("\"%s\"", time.Time(t).Format("2006-01-02T15:04:05.999Z07:00"))
+	return []byte(timestr), nil
+}
+
+//通信消息
+type TransmitMessage struct {
+	MessageId       string   //消息唯一编号
+	MessageType     int      //消息类型代码
+	MessageContent  string   //具体消息结构体,根据消息类型不同结构不同
+	MessageTime     JsonTime //消息发送事件
+	MessageReceiver []string //消息接受者
+}
+
 type TransmitMessage struct {
 	MessageId       string
 	MessageType     uint
