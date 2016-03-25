@@ -3,7 +3,7 @@ package saints_go_specification
 type DigitalCommand struct {
 	CommandType uint
 	Layout      *DigitalLayout
-	Marquee     *DigitalMarquee
+	Text        *DigitalMarquee
 	Speech      string
-	ElapseTime  uint
+	ElapsedTime uint
 }
