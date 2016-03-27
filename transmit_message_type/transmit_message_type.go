@@ -8,4 +8,5 @@ const (
 	DeviceControl  = 4
 	DigitalControl = 5
 	Maintain       = 6
+	Hospital       = 7
 )
