@@ -1,4 +1,4 @@
-package saints_go_specification
+package saints_specification_go
 
 type DeviceControlParam struct {
 	Cmd        uint
