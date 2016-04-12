@@ -12,6 +12,7 @@ const (
 	CentralUpdateService   = 7
 	TransmitMessageService = 8
 	SerialGatewayService   = 9
+	SendMessageService     = 10
 
 	//1024 - 2048 service provided by third party
 	WebMapService           = 1024
