@@ -20,6 +20,6 @@ func GetContentMap(content_type uint) (resource_code uint) {
 	if v, ok := contentMap[content_type]; ok {
 		return v
 	} else {
-		return -1
+		return 65535
 	}
 }

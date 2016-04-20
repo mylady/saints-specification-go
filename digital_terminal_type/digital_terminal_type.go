@@ -16,6 +16,6 @@ func GetTemrinalMap(terminal_type uint) (resource_code uint) {
 	if v, ok := terminalMap[terminal_type]; ok {
 		return v
 	} else {
-		return -1
+		return 65535
 	}
 }
