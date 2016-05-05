@@ -21,4 +21,6 @@ const (
 	MatrixPTZl           = 17
 	MatrixPreset         = 18
 	SetTvwallLayout      = 19
+	OpenDoor             = 20
+	CloseDoor            = 21
 )

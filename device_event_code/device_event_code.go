@@ -1,6 +1,7 @@
 package device_event_code
 
 const (
+	None         = -1
 	DoorOpened   = 0
 	DoorClosed   = 1
 	FlashOpen    = 2

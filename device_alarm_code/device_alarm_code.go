@@ -1,6 +1,7 @@
 package device_alarm_code
 
 const (
+	None             = -1
 	AreaAlarm        = 0
 	MotionDetec      = 1
 	VideoLost        = 2
@@ -33,4 +34,11 @@ const (
 	VideoQuality     = 29
 	DutyCheck        = 30
 	FierceMotion     = 31
+	DeviceFault      = 32
+	AudioLost        = 33
+	FanFault         = 34
+	TemperatureAlarm = 35
+	HumidityAlarm    = 36
+	DoorPointAlarm   = 37
+	ForceOperation   = 38
 )
