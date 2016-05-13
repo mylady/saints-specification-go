@@ -6,4 +6,6 @@ const (
 	Blood        = 2
 	Pharmacy     = 3
 	Ris          = 4
+	ClearArea    = 5
+	ClearAll     = 6
 )
