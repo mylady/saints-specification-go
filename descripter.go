@@ -1,6 +1,6 @@
 package saints_specification_go
 
-type Descriptor struct {
+type Descripter struct {
 	Name    string
 	Version string
 	Support string

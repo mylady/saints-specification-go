@@ -1,7 +1,7 @@
 package device_alarm_code
 
 const (
-	None             = -1
+	Unknown          = -1
 	AreaAlarm        = 0
 	MotionDetec      = 1
 	VideoLost        = 2
