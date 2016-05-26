@@ -1,6 +1,7 @@
 package resource_code
 
 const (
+	Unknown = -1
 	//front-end of security device
 	Camera            = 0
 	Door              = 1
