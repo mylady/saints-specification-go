@@ -49,4 +49,13 @@ const (
 	YishiteUpsHost              = 45
 	HongshiVideoAnalysePlatform = 46
 	HongshenVideoAnalyseDevice  = 47
+	LingxinLedControllerV5_2014 = 48
+	Haikang7200Platform         = 49
+	Haikang8300Platform         = 50
+	Haikang8700Platform         = 51
+	KedaPlatform                = 52
+	GuangtuoDevice              = 53
+	MeizanmeiDevice             = 54
+	YingfeituoDevice            = 55
+	ZhongxinliweiDevice         = 56
 )
