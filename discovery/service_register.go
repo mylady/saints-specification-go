@@ -7,37 +7,37 @@ import (
 	"github.com/mylady/saints-specification-go"
 )
 
-type ServiceRegisger struct {
+type ServiceRegister struct {
 	services   []saints_specification_go.ProtocolService
 	proxy      string
 	regchannel chan<- bool
 }
 
-func NewServiceRegisger(proxy_ip string) *ServiceRegisger {
-	return &ServiceRegisger{
+func NewServiceRegister(proxy_ip string) *ServiceRegister {
+	return &ServiceRegister{
 		services: make([]saints_specification_go.ProtocolService, 10),
 		proxy:    proxy_ip,
 	}
 }
 
-func (this *ServiceRegisger) AddService(service saints_specification_go.ProtocolService) {
+func (this *ServiceRegister) AddService(service saints_specification_go.ProtocolService) {
 	this.services = append(this.services, service)
 }
 
-func (this *ServiceRegisger) StartRegister() {
+func (this *ServiceRegister) StartRegister() {
 	interval, _ := time.ParseDuration(RegisterInterval)
 	this.regchannel = SetInterval(this.doregister, interval)
 }
 
-func (this *ServiceRegisger) StopRegister() {
+func (this *ServiceRegister) StopRegister() {
 	this.regchannel <- true
 }
 
-func (this *ServiceRegisger) getServices() []saints_specification_go.ProtocolService {
+func (this *ServiceRegister) getServices() []saints_specification_go.ProtocolService {
 	return this.services
 }
 
-func (this *ServiceRegisger) doregister() {
+func (this *ServiceRegister) doregister() {
 	//register services
 
 	address := DiscoveryServiceAddress
