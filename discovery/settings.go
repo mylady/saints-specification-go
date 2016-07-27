@@ -13,5 +13,4 @@ const (
 	SendMessageApi          = "/send"
 	DefaultPort             = 8092
 	RegisterInterval        = "5s"
-	FinderInterval          = "5s"
 )
