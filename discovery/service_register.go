@@ -46,8 +46,10 @@ func (this *ServiceRegister) doregister() {
 		address = ProxyServiceAddress
 	}
 
-	data, _ := json.Marshal(this.services)
-	if err := Post(address, data); err != nil {
+	for _, service := range this.services {
+		data, _ := json.Marshal(service)
+		if err := Post(address, data); err != nil {
 
+		}
 	}
 }
