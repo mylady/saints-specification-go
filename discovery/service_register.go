@@ -9,14 +9,12 @@ import (
 
 type ServiceRegister struct {
 	services   []saints_specification_go.ProtocolService
-	proxy      string
 	regchannel chan<- bool
 }
 
-func NewServiceRegister(proxy_ip string) *ServiceRegister {
+func NewServiceRegister() *ServiceRegister {
 	return &ServiceRegister{
 		services: make([]saints_specification_go.ProtocolService, 10),
-		proxy:    proxy_ip,
 	}
 }
 
@@ -41,8 +39,7 @@ func (this *ServiceRegister) doregister() {
 	//register services
 
 	address := DiscoveryServiceAddress
-	if this.proxy != "" {
-		ProxyBaseAddress = proxy
+	if proxy != "" {
 		address = ProxyServiceAddress
 	}
 
