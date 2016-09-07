@@ -15,7 +15,7 @@ type ServiceRegister struct {
 
 func NewServiceRegister() *ServiceRegister {
 	return &ServiceRegister{
-		services: make([]saints_specification_go.ProtocolService, 10),
+		services: make([]saints_specification_go.ProtocolService, 0),
 	}
 }
 
