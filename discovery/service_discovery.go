@@ -13,6 +13,7 @@ var proxy string
 func SetProxy(proxy_ip string) {
 	proxy = proxy_ip
 	ProxyBaseAddress = strings.Replace(ProxyBaseAddress, "ip", proxy_ip, 1)
+	ProxyServiceAddress = strings.Replace(ProxyServiceAddress, "ip", proxy_ip, 1)
 }
 
 func GetService(servtype uint) (target saints_specification_go.ProtocolService, err error) {
