@@ -7,6 +7,7 @@ var (
 
 const (
 	discoveryBaseAddress    = "http://localhost:23001/api/v1"
+	DiscoveryPeerAddress    = discoveryBaseAddress + "/discovery"
 	DiscoveryServiceAddress = discoveryBaseAddress + "/services"
 	DiscoveryProductAddress = discoveryBaseAddress + "/products"
 	DiscoveryNetworkAddress = discoveryBaseAddress + "/network"
