@@ -47,7 +47,7 @@ func (this *ServiceRegister) doregister() {
 	for _, service := range this.services {
 		data, _ := json.Marshal(service)
 		if err := Post(address, data); err != nil {
-			fmt.Println(err)
+			//fmt.Println(err)
 		}
 	}
 }
