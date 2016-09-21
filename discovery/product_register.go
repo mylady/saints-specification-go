@@ -2,7 +2,6 @@ package discovery
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
 
 	"github.com/mylady/saints-specification-go"
@@ -35,7 +34,5 @@ func (this *ProductRegisger) GetProduct() saints_specification_go.ProductInfo {
 func (this *ProductRegisger) doregister() {
 	//register product
 	data, _ := json.Marshal(this.product)
-	if err := Post(DiscoveryProductAddress, data); err != nil {
-		//fmt.Println(err)
-	}
+	Post(DiscoveryProductAddress, data)
 }

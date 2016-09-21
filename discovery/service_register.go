@@ -2,7 +2,6 @@ package discovery
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
 
 	"github.com/mylady/saints-specification-go"
@@ -46,8 +45,6 @@ func (this *ServiceRegister) doregister() {
 
 	for _, service := range this.services {
 		data, _ := json.Marshal(service)
-		if err := Post(address, data); err != nil {
-			//fmt.Println(err)
-		}
+		Post(address, data)
 	}
 }
