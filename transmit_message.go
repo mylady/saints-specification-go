@@ -1,7 +1,6 @@
 package saints_specification_go
 
 import (
-	"encoding/json"
 	"fmt"
 	"time"
 
@@ -23,26 +22,14 @@ type TransmitMessage struct {
 	MessageReceiver []string
 }
 
-func NewMessage(content interface{}, messageType int, receivers []string) (message TransmitMessage, err error) {
-	var data []byte
+func NewMessage(content string, messageType int, receivers []string) (message TransmitMessage, err error) {
 	uid, _ := uuid.NewV4()
-	if content == nil {
-		message = TransmitMessage{
-			MessageId:       uid.String(),
-			MessageContent:  "",
-			MessageType:     uint(messageType),
-			MessageTime:     JsonTime(time.Now()),
-			MessageReceiver: receivers,
-		}
-	} else if data, err = json.Marshal(content); err == nil {
-		fmt.Printf("%s", string(data))
-		message = TransmitMessage{
-			MessageId:       uid.String(),
-			MessageContent:  string(data),
-			MessageType:     uint(messageType),
-			MessageTime:     JsonTime(time.Now()),
-			MessageReceiver: receivers,
-		}
+	message = TransmitMessage{
+		MessageId:       uid.String(),
+		MessageContent:  content,
+		MessageType:     uint(messageType),
+		MessageTime:     JsonTime(time.Now()),
+		MessageReceiver: receivers,
 	}
 	return
 }
