@@ -35,6 +35,7 @@ func NewMessage(content interface{}, messageType int, receivers []string) (messa
 			MessageReceiver: receivers,
 		}
 	} else if data, err = json.Marshal(content); err == nil {
+		fmt.Printf("%s", string(data))
 		message = TransmitMessage{
 			MessageId:       uid.String(),
 			MessageContent:  string(data),
