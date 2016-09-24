@@ -31,22 +31,24 @@ const (
 	base64Table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 )
 
-func Post(url string, data []byte) (err error) {
+func Post(url string, data []byte) (res []byte, err error) {
 	var response *http.Response
 	buffer := bytes.NewBuffer(data)
 	if response, err = http.Post(url, "application/json;charset=utf-8", buffer); err == nil {
-		if response.StatusCode != http.StatusOK {
-			var body []byte
-			if body, err = ioutil.ReadAll(response.Body); err == nil {
+		var body []byte
+		if body, err = ioutil.ReadAll(response.Body); err == nil {
+			if response.StatusCode != http.StatusOK {
 				err = errors.New(string(body))
+			} else {
+				res = body
 			}
 		}
 		response.Body.Close()
 	}
-	return err
+	return res, err
 }
 
-func PostBasicAuth(url string, username string, userpwd string, data []byte) (err error) {
+func PostBasicAuth(url string, username string, userpwd string, data []byte) (res []byte, err error) {
 	var response *http.Response
 	var encoded string
 
@@ -59,16 +61,18 @@ func PostBasicAuth(url string, username string, userpwd string, data []byte) (er
 
 		client := &http.Client{}
 		if response, err = client.Do(request); err == nil {
-			if response.StatusCode != http.StatusOK {
-				var body []byte
-				if body, err = ioutil.ReadAll(response.Body); err == nil {
+			var body []byte
+			if body, err = ioutil.ReadAll(response.Body); err == nil {
+				if response.StatusCode != http.StatusOK {
 					err = errors.New(string(body))
+				} else {
+					res = body
 				}
 			}
 			response.Body.Close()
 		}
 	}
-	return err
+	return res, err
 }
 
 func Get(url string) (data []byte, err error) {
