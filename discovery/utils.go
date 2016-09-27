@@ -50,10 +50,60 @@ func Post(url string, data []byte) (res []byte, err error) {
 
 func PostBasicAuth(url string, username string, userpwd string, data []byte) (res []byte, err error) {
 	var response *http.Response
+	var request *http.Request
 	var encoded string
 
 	buffer := bytes.NewBuffer(data)
-	if request, err := http.NewRequest("POST", url, buffer); err == nil {
+	if request, err = http.NewRequest("POST", url, buffer); err == nil {
+		encoder := base64.NewEncoding(base64Table)
+		encoded = encoder.EncodeToString([]byte(username + ":" + userpwd))
+		request.Header.Add("Authorization", "Basic "+encoded)
+		request.Header.Add("Content-Type", "application/json;charset=utf-8")
+
+		client := &http.Client{}
+		if response, err = client.Do(request); err == nil {
+			var body []byte
+			if body, err = ioutil.ReadAll(response.Body); err == nil {
+				if response.StatusCode != http.StatusOK {
+					err = errors.New(string(body))
+				} else {
+					res = body
+				}
+			}
+			response.Body.Close()
+		}
+	}
+	return res, err
+}
+
+func Put(url string, data []byte) (res []byte, err error) {
+	var response *http.Response
+	var request *http.Request
+	buffer := bytes.NewBuffer(data)
+	if request, err = http.NewRequest("PUT", url, buffer); err == nil {
+		client := &http.Client{}
+		if response, err = client.Do(request); err == nil {
+			var body []byte
+			if body, err = ioutil.ReadAll(response.Body); err == nil {
+				if response.StatusCode != http.StatusOK {
+					err = errors.New(string(body))
+				} else {
+					res = body
+				}
+			}
+			response.Body.Close()
+		}
+	}
+	return res, err
+}
+
+func PutBasicAuth(url string, username string, userpwd string, data []byte) (res []byte, err error) {
+	var response *http.Response
+	var request *http.Request
+	var encoded string
+
+	buffer := bytes.NewBuffer(data)
+	if request, err = http.NewRequest("PUT", url, buffer); err == nil {
 		encoder := base64.NewEncoding(base64Table)
 		encoded = encoder.EncodeToString([]byte(username + ":" + userpwd))
 		request.Header.Add("Authorization", "Basic "+encoded)
@@ -86,4 +136,31 @@ func Get(url string) (data []byte, err error) {
 		}
 	}
 	return data, err
+}
+
+func GetBasicAuth(url string, username string, userpwd string) (res []byte, err error) {
+	var response *http.Response
+	var request *http.Request
+	var encoded string
+
+	if request, err = http.NewRequest("GET", url, nil); err == nil {
+		encoder := base64.NewEncoding(base64Table)
+		encoded = encoder.EncodeToString([]byte(username + ":" + userpwd))
+		request.Header.Add("Authorization", "Basic "+encoded)
+		request.Header.Add("Content-Type", "application/json;charset=utf-8")
+
+		client := &http.Client{}
+		if response, err = client.Do(request); err == nil {
+			var body []byte
+			if body, err = ioutil.ReadAll(response.Body); err == nil {
+				if response.StatusCode != http.StatusOK {
+					err = errors.New(string(body))
+				} else {
+					res = body
+				}
+			}
+			response.Body.Close()
+		}
+	}
+	return res, err
 }
