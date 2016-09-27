@@ -1,4 +1,4 @@
-package device_status
+package device_working_status
 
 const (
 	Normal = 0
