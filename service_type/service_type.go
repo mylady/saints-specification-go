@@ -13,7 +13,7 @@ const (
 	TransmitMessageService = 8
 	SerialGatewayService   = 9
 	SendMessageService     = 10
-	VideoScheduleService   = 11
+	VideoService           = 11
 	SchoolService          = 12
 
 	//1024 - 2048 service provided by third party
