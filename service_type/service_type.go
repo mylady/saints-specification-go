@@ -15,6 +15,7 @@ const (
 	SendMessageService     = 10
 	VideoService           = 11
 	SchoolService          = 12
+	PrisonService          = 13
 
 	//1024 - 2048 service provided by third party
 	WebMapService           = 1024
