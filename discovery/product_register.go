@@ -7,31 +7,31 @@ import (
 	"github.com/mylady/saints-specification-go"
 )
 
-type ProductRegisger struct {
+type ProductRegister struct {
 	product    saints_specification_go.ProductInfo
 	regchannel chan<- bool
 }
 
-func NewProductRegisger(prod saints_specification_go.ProductInfo) *ProductRegisger {
-	return &ProductRegisger{
+func NewProductRegister(prod saints_specification_go.ProductInfo) *ProductRegister {
+	return &ProductRegister{
 		product: prod,
 	}
 }
 
-func (this *ProductRegisger) StartRegister() {
+func (this *ProductRegister) StartRegister() {
 	interval, _ := time.ParseDuration(RegisterInterval)
 	this.regchannel = SetInterval(this.doregister, interval)
 }
 
-func (this *ProductRegisger) StopRegister() {
+func (this *ProductRegister) StopRegister() {
 	this.regchannel <- true
 }
 
-func (this *ProductRegisger) GetProduct() saints_specification_go.ProductInfo {
+func (this *ProductRegister) GetProduct() saints_specification_go.ProductInfo {
 	return this.product
 }
 
-func (this *ProductRegisger) doregister() {
+func (this *ProductRegister) doregister() {
 	//register product
 	data, _ := json.Marshal(this.product)
 	Post(DiscoveryProductAddress, data)
