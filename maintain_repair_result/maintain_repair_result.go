@@ -7,4 +7,5 @@ const (
 	Transfer    = 3
 	NeedConfrim = 4
 	Done        = 5
+	MisReport   = 6
 )
