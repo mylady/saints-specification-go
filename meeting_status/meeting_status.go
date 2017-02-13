@@ -1,4 +1,4 @@
-package prisoner_activity_status
+package meeting_status
 
 const (
 	None           = 0
