@@ -9,4 +9,5 @@ const (
 	DigitalControl = 5
 	Maintain       = 6
 	Hospital       = 7
+	Prison         = 8
 )
