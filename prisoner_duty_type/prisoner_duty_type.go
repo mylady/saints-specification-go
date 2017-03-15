@@ -1,8 +1,7 @@
 package prisoner_duty_type
 
-const(
-    Noon = 1
-    Night = 2
-    Clean = 3
-
+const (
+	Noon  = 0
+	Night = 1
+	Clean = 2
 )
