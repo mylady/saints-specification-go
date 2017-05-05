@@ -1,6 +1,7 @@
 package device_interface_code
 
 const (
+	None                        = -1
 	HikvisionGeneralDevice      = 0
 	DahuaGeneralDevice          = 1
 	DahuaDSSVideoPlatform       = 2

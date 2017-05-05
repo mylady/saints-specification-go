@@ -30,4 +30,5 @@ const (
 	Yishite       = 25
 	Hongshi       = 26
 	Hongshen      = 27
+	Meizanmei     = 28
 )
