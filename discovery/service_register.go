@@ -4,16 +4,20 @@ import (
 	"encoding/json"
 	"time"
 
+	"strings"
+
 	"github.com/mylady/saints-specification-go"
 )
 
 type ServiceRegister struct {
+	proxy      string
 	services   []saints_specification_go.ProtocolService
 	regchannel chan<- bool
 }
 
-func NewServiceRegister() *ServiceRegister {
+func NewServiceRegister(p string) *ServiceRegister {
 	return &ServiceRegister{
+		proxy:    p,
 		services: make([]saints_specification_go.ProtocolService, 0),
 	}
 }
@@ -39,8 +43,8 @@ func (this *ServiceRegister) doregister() {
 	//register services
 
 	address := DiscoveryServiceAddress
-	if proxy != "" {
-		address = ProxyServiceAddress
+	if this.proxy != "" {
+		address = strings.Replace(ProxyServiceAddress, "ip", this.proxy, 1)
 	}
 
 	for _, service := range this.services {
