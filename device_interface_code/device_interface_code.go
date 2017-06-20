@@ -59,4 +59,5 @@ const (
 	MeizanmeiDevice             = 54
 	YingfeituoDevice            = 55
 	ZhongxinliweiDevice         = 56
+	YuShiNvrNvrEncoderHost      = 57
 )
