@@ -1,7 +1,8 @@
 package saints_specification_go
 
 type Descripter struct {
-	Name    string
-	Version string
-	Support string
+	Name       string
+	Version    string
+	Support    string
+	Configable bool
 }

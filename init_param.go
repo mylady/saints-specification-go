@@ -14,4 +14,5 @@ type InitParam struct {
 	Parity           byte
 	ConnectionString string
 	Extra            string
+	ControlCmd       string
 }
