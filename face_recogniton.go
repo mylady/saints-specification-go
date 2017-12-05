@@ -10,4 +10,7 @@ type FaceRecognition struct {
 	FaceHeight     int
 	IsHit          bool
 	HitImagePath   string
+	Similarity     float64
+	PersonId       string
+	PersonName     string
 }
