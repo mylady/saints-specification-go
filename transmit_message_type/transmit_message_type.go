@@ -10,4 +10,5 @@ const (
 	Maintain       = 6
 	Hospital       = 7
 	Prison         = 8
+	BioIdentify    = 9
 )
