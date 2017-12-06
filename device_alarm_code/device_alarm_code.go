@@ -44,6 +44,7 @@ const (
 	SoundAlarm        = 39
 	LowBattery        = 40
 	VideoAnalyseAlarm = 41
+	FaceDefenceAlarm  = 42
 )
 
 var AlarmCodeMap = make(map[int]string)
@@ -92,4 +93,5 @@ func init() {
 	AlarmCodeMap[SoundAlarm] = "分贝报警"
 	AlarmCodeMap[LowBattery] = "电量低"
 	AlarmCodeMap[VideoAnalyseAlarm] = "视频分析报警"
+	AlarmCodeMap[FaceDefenceAlarm] = "人脸布防报警"
 }

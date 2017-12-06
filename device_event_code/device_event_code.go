@@ -10,4 +10,5 @@ const (
 	SlaveCallin  = 5
 	MasterCallin = 6
 	DataUpdate   = 7
+	FaceCapture  = 8
 )
