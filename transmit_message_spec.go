@@ -14,5 +14,5 @@ const (
 	TRANSMIT_MESSAGE_ROOM_HOSPITAL        = "hospital"
 	TRANSMIT_MESSAGE_ROOM_MAINTAIN        = "maintain"
 	TRANSMIT_MESSAGE_ROOM_PRISON          = "prison"
-	TRANSMIT_MESSAGE_ROOM_BIOIDENTIFY     = "bioidentify"
+	TRANSMIT_MESSAGE_ROOM_BIOIDENTIFY     = "bio_identify"
 )
