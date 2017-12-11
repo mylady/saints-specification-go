@@ -5,5 +5,6 @@ type FaceRollCallFeedback struct {
 	PrisonerSnbh     string
 	PrisonerName     string
 	PrisonerFacePath string
+	RollCallStatus   int
 	RollCallResult   int
 }
