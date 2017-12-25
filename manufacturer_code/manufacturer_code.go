@@ -31,4 +31,18 @@ const (
 	Hongshi       = 26
 	Hongshen      = 27
 	Meizanmei     = 28
+	Saibangte     = 29
+	Niubeier      = 30
+	Peak          = 31
+	Yitong        = 32
+	Kuaiyu        = 33
+	Bocom         = 34
+	Intel         = 35
+	Huigu         = 36
+	Guangtuo      = 37
+	Aosong        = 38
+	Miaoguan      = 39
+	Dashi         = 40
+	Xiling        = 41
+	Yitu          = 42
 )

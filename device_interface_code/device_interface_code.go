@@ -71,4 +71,6 @@ const (
 	HaiKangDecoderSDK           = 66
 	DaHuaDecoderSDK             = 67
 	BoShiAlarmSERIAL            = 68
+	YiTuFaceRecognitionREST     = 69
+	XiLingVideoAnalyseREST      = 70
 )

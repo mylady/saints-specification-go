@@ -3,14 +3,16 @@ package resource_code
 const (
 	Unknown = -1
 	//front-end of security device
-	Camera            = 0
-	Door              = 1
-	ManuAlarm         = 2
-	CallTerminal      = 3
-	SoundAlarm        = 4
-	IrAlarm           = 5
-	PowerGrid         = 6
-	EnviromentMonitor = 7
+	Camera             = 0
+	Door               = 1
+	ManuAlarm          = 2
+	CallTerminal       = 3
+	SoundAlarm         = 4
+	IrAlarm            = 5
+	PowerGrid          = 6
+	TemperatureMonitor = 7
+	SmokeMonitor       = 8
+	AirMonitor         = 9
 
 	//front-end virtual security device
 	DecodeChannel       = 256
