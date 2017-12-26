@@ -73,4 +73,6 @@ const (
 	BoShiAlarmSERIAL            = 68
 	YiTuFaceRecognitionREST     = 69
 	XiLingVideoAnalyseREST      = 70
+	SiHuaRFIDWebSocket          = 71
+	LianTongIOTREST             = 72
 )

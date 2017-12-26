@@ -45,4 +45,6 @@ const (
 	Dashi         = 40
 	Xiling        = 41
 	Yitu          = 42
+	Sihua         = 43
+	Unicom        = 44
 )
