@@ -13,6 +13,7 @@ const (
 	EnviromentMonitor = 7
 	SmokeMonitor      = 8
 	AirMonitor        = 9
+	RFIDTag           = 10
 
 	//front-end virtual security device
 	DecodeChannel       = 256
