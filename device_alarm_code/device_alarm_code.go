@@ -48,6 +48,8 @@ const (
 	RFIDBrokenAlarm   = 43
 	HeartRateAlarm    = 44
 	RFIDButtonAlarm   = 45
+	SmokeAlarm        = 46
+	FireAlarm         = 47
 )
 
 var AlarmCodeMap = make(map[int]string)
@@ -100,4 +102,6 @@ func init() {
 	AlarmCodeMap[RFIDBrokenAlarm] = "腕带断开报警"
 	AlarmCodeMap[HeartRateAlarm] = "心率异常报警"
 	AlarmCodeMap[RFIDButtonAlarm] = "标签按钮报警"
+	AlarmCodeMap[SmokeAlarm] = "烟雾报警"
+	AlarmCodeMap[FireAlarm] = "火警"
 }
