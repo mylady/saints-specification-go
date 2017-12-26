@@ -71,7 +71,10 @@ func init() {
 	ResourceCodeMap[SoundAlarm] = "分贝报警"
 	ResourceCodeMap[IrAlarm] = "红外报警"
 	ResourceCodeMap[PowerGrid] = "电网网段"
-	ResourceCodeMap[EnviromentMonitor] = "环境监测点"
+	ResourceCodeMap[EnviromentMonitor] = "温湿度监测"
+	ResourceCodeMap[SmokeMonitor] = "烟雾报警器"
+	ResourceCodeMap[AirMonitor] = "空气质量监测"
+	ResourceCodeMap[RFIDTag] = "RFID标签"
 	// font-virtual
 	//	256, 257, 258, 259,
 	ResourceCodeMap[DecodeChannel] = "解码通道"

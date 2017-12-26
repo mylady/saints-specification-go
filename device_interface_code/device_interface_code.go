@@ -74,5 +74,5 @@ const (
 	YiTuFaceRecognitionREST     = 69
 	XiLingVideoAnalyseREST      = 70
 	SiHuaRFIDWebSocket          = 71
-	LianTongIOTREST             = 72
+	UnicomIOTREST               = 72
 )
