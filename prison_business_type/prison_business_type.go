@@ -8,4 +8,7 @@ const (
 	FaceRollCallFeedback   = 4
 	FaceRollCallCellEnd    = 5
 	StopFaceRollCall       = 6
+	AnswerAlarm            = 7
+	DealingAlarm           = 8
+	DealedAlarm            = 9
 )
