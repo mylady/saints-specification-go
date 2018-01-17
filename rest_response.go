@@ -20,10 +20,10 @@ func NewRestResponse(success bool, errmsg string, data interface{}, totalcnt int
 
 //NewBoolResponse :create bool only ServerResponse struct
 func NewBoolResponse(success bool, errmsg string) (response *RestResponse) {
-	return NewServerResponse(success, errmsg, nil, 0)
+	return NewRestResponse(success, errmsg, nil, 0)
 }
 
 //NewDataResponse :create bool and data ServerResponse struct
 func NewDataResponse(data interface{}, totalcnt int64) (response *RestResponse) {
-	return NewServerResponse(true, "", data, totalcnt)
+	return NewRestResponse(true, "", data, totalcnt)
 }
