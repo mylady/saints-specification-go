@@ -1,7 +1,7 @@
 package saints_specification_go
 
-//ServerResponse :beego rest response struct
-type ServerResponse struct {
+//RestResponse :beego rest response struct
+type RestResponse struct {
 	Result     bool        `json:"result"`
 	ErrorMsg   string      `json:"error_msg"`
 	Data       interface{} `json:"data"`
@@ -9,8 +9,8 @@ type ServerResponse struct {
 }
 
 //NewServerResponse :create default ServerResponse struct
-func NewServerResponse(success bool, errmsg string, data interface{}, totalcnt int64) (response *ServerResponse) {
-	return &ServerResponse{
+func NewRestResponse(success bool, errmsg string, data interface{}, totalcnt int64) (response *RestResponse) {
+	return &RestResponse{
 		Result:     success,
 		ErrorMsg:   errmsg,
 		Data:       data,
@@ -19,11 +19,11 @@ func NewServerResponse(success bool, errmsg string, data interface{}, totalcnt i
 }
 
 //NewBoolResponse :create bool only ServerResponse struct
-func NewBoolResponse(success bool, errmsg string) (response *ServerResponse) {
+func NewBoolResponse(success bool, errmsg string) (response *RestResponse) {
 	return NewServerResponse(success, errmsg, nil, 0)
 }
 
 //NewDataResponse :create bool and data ServerResponse struct
-func NewDataResponse(data interface{}, totalcnt int64) (response *ServerResponse) {
+func NewDataResponse(data interface{}, totalcnt int64) (response *RestResponse) {
 	return NewServerResponse(true, "", data, totalcnt)
 }
