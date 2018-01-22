@@ -4,7 +4,7 @@ const (
 	None                        = -1
 	HaiKangVideoSDK             = 0
 	DaHuaVideoSDK               = 1
-	DaHuaSDDVideoPlatformSDK    = 2
+	DaHuaDSSVideoPlatformSDK    = 2
 	DaHua7016VideoPlatformSDK   = 3
 	WangLiPVGSDK                = 4
 	YuShiVideoSDK               = 5
@@ -75,4 +75,5 @@ const (
 	XiLingVideoAnalyseREST      = 70
 	SiHuaRFIDWebSocket          = 71
 	UnicomIOTREST               = 72
+	DaHuaVideoAnalyseSDK        = 73
 )
