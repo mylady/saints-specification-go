@@ -76,4 +76,5 @@ const (
 	SiHuaRFIDWebSocket          = 71
 	UnicomIOTREST               = 72
 	DaHuaVideoAnalyseSDK        = 73
+	SiHuaRFIDLocatingREST       = 74
 )
