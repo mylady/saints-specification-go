@@ -1,4 +1,4 @@
-package prison_room_status
+package prison_meeting_room_status
 
 const (
 	Unavailable = 0

@@ -1,4 +1,4 @@
-package prison_room_type
+package prison_meeting_room_type
 
 const (
 	General     = 0
