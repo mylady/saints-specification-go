@@ -77,4 +77,5 @@ const (
 	UnicomIOTREST               = 72
 	DaHuaVideoAnalyseSDK        = 73
 	SiHuaRFIDLocatingREST       = 74
+	JuYingRelayTCP              = 75
 )

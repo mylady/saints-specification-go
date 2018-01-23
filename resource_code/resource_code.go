@@ -14,6 +14,7 @@ const (
 	SmokeMonitor      = 8
 	AirMonitor        = 9
 	RFIDTag           = 10
+	RelayModule       = 11
 
 	//front-end virtual security device
 	DecodeChannel       = 256
@@ -36,6 +37,7 @@ const (
 	UpsHost               = 523
 	VideoAnalyseHost      = 524
 	Detector              = 525
+	RelayHost             = 526
 
 	//other device
 	PersonalComputer = 1024

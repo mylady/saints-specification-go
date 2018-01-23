@@ -47,4 +47,5 @@ const (
 	Yitu          = 42
 	Sihua         = 43
 	Unicom        = 44
+	JuYing        = 45
 )
