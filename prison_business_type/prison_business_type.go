@@ -1,6 +1,7 @@
 package prison_business_type
 
 const (
+	Refresh                = 0
 	CellTerminalNotify     = 1
 	MeetingArraignFeedback = 2
 	StartFaceRollCall      = 3
