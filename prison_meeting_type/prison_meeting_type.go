@@ -1,8 +1,9 @@
 package prison_meeting_type
 
 const (
-	General       = 0
-	Arraignment   = 1
-	LawyerMeeting = 2
-	FamliyMeeting = 3
+	General         = 0
+	Arraignment     = 1
+	LawyerMeeting   = 2
+	FamliyMeeting   = 3
+	SignArraignment = 4
 )
