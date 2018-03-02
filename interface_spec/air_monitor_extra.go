@@ -7,6 +7,6 @@ type AirMonitorExtra struct {
 	CO2         float32
 	PM25        float32
 	TVOC        float32
-	N3H         float32
+	NH3         float32
 	H2S         float32
 }
