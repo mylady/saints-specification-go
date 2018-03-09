@@ -78,4 +78,7 @@ const (
 	DaHuaVideoAnalyseSDK        = 73
 	SiHuaRFIDLocatingREST       = 74
 	JuYingRelayTCP              = 75
+
+	//saints define
+	ShengXiDoorUDP = 10001
 )
