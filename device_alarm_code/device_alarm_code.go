@@ -51,6 +51,10 @@ const (
 	SmokeAlarm        = 46
 	FireAlarm         = 47
 	Gathering         = 48
+	DutySleep         = 49
+	Fight             = 50
+	LeftDuty          = 51
+	CrossLine         = 52
 )
 
 var AlarmCodeMap = make(map[int]string)
@@ -106,4 +110,8 @@ func init() {
 	AlarmCodeMap[SmokeAlarm] = "烟雾报警"
 	AlarmCodeMap[FireAlarm] = "火警"
 	AlarmCodeMap[Gathering] = "人员聚集报警"
+	AlarmCodeMap[DutySleep] = "值班睡觉"
+	AlarmCodeMap[Fight] = "打架"
+	AlarmCodeMap[LeftDuty] = "无人值守"
+	AlarmCodeMap[CrossLine] = "警戒线报警"
 }
