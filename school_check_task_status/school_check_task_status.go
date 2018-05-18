@@ -4,5 +4,4 @@ const (
 	NotStart = 0
 	OnGoing  = 1
 	Finish   = 2
-	Review   = 3
 )
