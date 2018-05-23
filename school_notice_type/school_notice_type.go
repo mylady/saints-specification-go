@@ -1,7 +1,7 @@
 package school_notice_type
 
 const (
-	NoticeAll    = 0
-	NoticeSchool = 1
-	NoticeCenter = 2
+	CenterNotification   = 0
+	ConferenceNotice     = 1
+	SafetyActivityNotice = 2
 )
