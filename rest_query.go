@@ -13,8 +13,8 @@ const (
 	SearchParam = "keyword"
 )
 
-//QueryParam :struct for query string paging params
-type QueryParam struct {
+//RestQuery :struct for query string paging params
+type RestQuery struct {
 	Start     int
 	Limit     int
 	Sort      string
