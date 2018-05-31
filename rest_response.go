@@ -8,7 +8,7 @@ type RestResponse struct {
 	TotalCount int64       `json:"total_count"`
 }
 
-//NewServerResponse :create default ServerResponse struct
+//NewRestResponse :create default ServerResponse struct
 func NewRestResponse(success bool, errmsg string, data interface{}, totalcnt int64) (response *RestResponse) {
 	return &RestResponse{
 		Result:     success,
