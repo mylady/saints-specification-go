@@ -13,5 +13,5 @@ type DeviceEventData struct {
 	AlarmCode        uint
 	EventTime        time.Time
 	EventDescription string
-	EventExtra       interface{}
+	EventExtra       string
 }
