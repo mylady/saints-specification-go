@@ -48,4 +48,7 @@ const (
 	Sihua         = 43
 	Unicom        = 44
 	JuYing        = 45
+	ShengKe       = 46
+	WanGu         = 47
+	RenWei        = 48
 )
