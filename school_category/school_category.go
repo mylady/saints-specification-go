@@ -10,4 +10,5 @@ const (
 	WanZhong               = 6
 	ZhiXiao                = 7
 	TeShuXueXiao           = 8
+	TuoErSuo               = 9
 )
