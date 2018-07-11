@@ -8,4 +8,5 @@ const (
 	UrgeActivityReport   = 4
 	UrgeDutyTable        = 5
 	UrgeSafetyReport     = 6
+	UrgeLicenseExpire    = 7
 )
