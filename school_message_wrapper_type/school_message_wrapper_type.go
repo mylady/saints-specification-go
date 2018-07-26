@@ -6,4 +6,6 @@ const (
 	SubmitRedressTask  = 2
 	ReviewRedressTask  = 3
 	RejctRedressTask   = 4
+	FinishRedressTask  = 5
+	InstantReportTask  = 6
 )
