@@ -130,7 +130,6 @@ func Get(url string) (data []byte, err error) {
 	if response, err = http.Get(url); err == nil {
 		if data, err = ioutil.ReadAll(response.Body); err == nil {
 			if response.StatusCode != http.StatusOK {
-				data = make([]byte, 0)
 				err = errors.New(string(data))
 			}
 		}
