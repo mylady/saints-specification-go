@@ -11,4 +11,5 @@ const (
 	ZhiXiao                = 7
 	TeShuXueXiao           = 8
 	TuoErSuo               = 9
+	QiTa                   = 255
 )
