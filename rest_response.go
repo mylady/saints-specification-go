@@ -1,5 +1,16 @@
 package saints_specification_go
 
+import (
+	"encoding/base64"
+	"encoding/json"
+)
+
+var enableEncrypt = false
+
+func SetEncrypt(enable bool) {
+	enableEncrypt = enable
+}
+
 //RestResponse :beego rest response struct
 type RestResponse struct {
 	Result     bool        `json:"result"`
@@ -10,6 +21,9 @@ type RestResponse struct {
 
 //NewRestResponse :create default ServerResponse struct
 func NewRestResponse(success bool, errmsg string, data interface{}, totalcnt int64) (response *RestResponse) {
+	if enableEncrypt {
+		data = encryptData(data)
+	}
 	return &RestResponse{
 		Result:     success,
 		ErrorMsg:   errmsg,
@@ -26,4 +40,10 @@ func NewBoolResponse(success bool, errmsg string) (response *RestResponse) {
 //NewDataResponse :create bool and data ServerResponse struct
 func NewDataResponse(data interface{}, totalcnt int64) (response *RestResponse) {
 	return NewRestResponse(true, "", data, totalcnt)
+}
+
+//encrypt resp
+func encryptData(data interface{}) string {
+	jsonStr, _ := json.Marshal(data)
+	return base64.StdEncoding.EncodeToString(jsonStr)
 }
