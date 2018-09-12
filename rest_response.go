@@ -4,6 +4,7 @@ package saints_specification_go
 type RestResponse struct {
 	Result     bool        `json:"result"`
 	ErrorMsg   string      `json:"error_msg"`
+	ErrorCode  int         `json:"error_code"`
 	Data       interface{} `json:"data"`
 	TotalCount int64       `json:"total_count"`
 }
