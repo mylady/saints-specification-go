@@ -19,6 +19,17 @@ func NewRestResponse(success bool, errmsg string, data interface{}, totalcnt int
 	}
 }
 
+//NewCodeRestResponse :create default ServerResponse struct with err code
+func NewCodeRestResponse(success bool, errcode int, errmsg string, data interface{}, totalcnt int64) (response *RestResponse) {
+	return &RestResponse{
+		Result:     success,
+		ErrorCode:  errcode,
+		ErrorMsg:   errmsg,
+		Data:       data,
+		TotalCount: totalcnt,
+	}
+}
+
 //NewBoolResponse :create bool only ServerResponse struct
 func NewBoolResponse(success bool, errmsg string) (response *RestResponse) {
 	return NewRestResponse(success, errmsg, nil, 0)
@@ -27,4 +38,9 @@ func NewBoolResponse(success bool, errmsg string) (response *RestResponse) {
 //NewDataResponse :create bool and data ServerResponse struct
 func NewDataResponse(data interface{}, totalcnt int64) (response *RestResponse) {
 	return NewRestResponse(true, "", data, totalcnt)
+}
+
+//NewCodeResponse :create bool with code ServerResponse struct
+func NewCodeResponse(success bool, errcode int, errmsg string) (response *RestResponse) {
+	return NewCodeRestResponse(success, errcode, errmsg, nil, 0)
 }
