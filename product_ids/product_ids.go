@@ -28,4 +28,5 @@ const (
 	GENERAL_VIDEO_PLAYER_ID              = "da81db8b-8d7c-46b2-b60f-6eca418206d2"
 	D3_SERVICE_ID                        = "1978d933-703d-44c0-93e9-2926218f09da"
 	COMMUNITY_SERVICE_ID                 = "cd4b1c95-a2b3-4824-baaf-dc2694773a01"
+	COMMUNITY_TERMINAL_ID                = "641c37ed-29bd-44a7-a21f-735dce906d7a"
 )
