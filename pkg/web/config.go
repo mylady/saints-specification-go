@@ -74,26 +74,26 @@ func NewConfigWithPath(p string) (c *Config, err error) {
 }
 
 //IsDebug :if debug is enabled
-func (c *AppConfig) IsDebug() bool {
-	if c.Env == EnvDevelopment {
+func (c *Config) IsDebug() bool {
+	if c.App.Env == EnvDevelopment {
 		return true
 	}
 	return false
 }
 
 //CanHTTPS :can run https server
-func (c *AppConfig) CanHTTPS() bool {
-	if _, err := os.Stat(c.CertFile); err != nil {
+func (c *Config) CanHTTPS() bool {
+	if _, err := os.Stat(c.App.CertFile); err != nil {
 		return false
 	}
 
-	if _, err := os.Stat(c.CertKey); err != nil {
+	if _, err := os.Stat(c.App.CertKey); err != nil {
 		return false
 	}
 
-	if c.HTTPSPort <= 0 {
+	if c.App.HTTPSPort <= 0 {
 		return false
 	}
 
-	return c.HTTPS
+	return c.App.HTTPS
 }
