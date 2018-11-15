@@ -44,13 +44,13 @@ type AppConfig struct {
 	Extra     map[string]interface{} `json:"extra"`
 }
 
-//New :create new app with default path
-func New() (c *AppConfig, err error) {
-	return NewWithPath(DefaultConfigPath)
+//NewAppConfig :create new app with default path
+func NewAppConfig() (c *AppConfig, err error) {
+	return NewAppConfigWithPath(DefaultConfigPath)
 }
 
-//NewWithPath :create new app config with given path
-func NewWithPath(p string) (c *AppConfig, err error) {
+//NewAppConfigWithPath :create new app config with given path
+func NewAppConfigWithPath(p string) (c *AppConfig, err error) {
 	if _, err := os.Stat(p); err != nil {
 		return nil, err
 	}
