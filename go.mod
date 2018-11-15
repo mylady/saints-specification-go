@@ -1,1 +1,1 @@
-module github.com/mylady/saints-specification-go
+module github.com/mylady/saints-specification-go/v2
