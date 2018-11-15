@@ -35,7 +35,6 @@ type AppConfig struct {
 	Env       string                 `json:"env"`
 	Port      int                    `json:"port"`
 	Hub       string                 `json:"hub"`
-	DB        map[string]*DBConfig   `json:"db"`
 	GZip      bool                   `json:"gzip"`
 	HTTPS     bool                   `json:"https"`
 	HTTPSPort int                    `json:"https_port"`
@@ -44,13 +43,19 @@ type AppConfig struct {
 	Extra     map[string]interface{} `json:"extra"`
 }
 
-//NewAppConfig :create new app with default path
-func NewAppConfig() (c *AppConfig, err error) {
-	return NewAppConfigWithPath(DefaultConfigPath)
+//Config :config for web app
+type Config struct {
+	App *AppConfig           `json:"app"`
+	DB  map[string]*DBConfig `json:"db"`
 }
 
-//NewAppConfigWithPath :create new app config with given path
-func NewAppConfigWithPath(p string) (c *AppConfig, err error) {
+//NewConfig :create new with default path
+func NewConfig() (c *Config, err error) {
+	return NewConfigWithPath(DefaultConfigPath)
+}
+
+//NewConfigWithPath :create new config with given path
+func NewConfigWithPath(p string) (c *Config, err error) {
 	if _, err := os.Stat(p); err != nil {
 		return nil, err
 	}
@@ -60,7 +65,7 @@ func NewAppConfigWithPath(p string) (c *AppConfig, err error) {
 		return nil, err
 	}
 
-	c = &AppConfig{}
+	c = &Config{}
 	if err = json.Unmarshal(j, c); err != nil {
 		return nil, err
 	}
