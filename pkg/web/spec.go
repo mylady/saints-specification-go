@@ -11,7 +11,7 @@ const EnvDevelopment = "development"
 const EnvProduction = "production"
 
 //DefaultConfigPath :Default app config file path
-const DefaultConfigPath = "config/config.json"
+const DefaultConfigPath = "config/web.json"
 
 /*
 	Port definition
