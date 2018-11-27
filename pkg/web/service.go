@@ -7,6 +7,9 @@ type Service struct {
 	Priority int    `json:"priority"`
 }
 
+//ServiceIPHolder :holder for address
+const ServiceIPHolder = "ip"
+
 //Service type enum
 const (
 	ServiceTypeIdentity = iota
