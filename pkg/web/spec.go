@@ -19,7 +19,7 @@ const DefaultConfigPath = "config/web.json"
 
 //Port
 const (
-	ServiceHubPort = 23001
+	ServiceHubPort = 23003
 )
 
 /*
