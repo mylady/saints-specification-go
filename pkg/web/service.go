@@ -42,7 +42,7 @@ var ServiceTypeDict = map[int]string{
 
 //ServiceRegister :service register
 type ServiceRegister struct {
-	srv        Service
+	service    Service
 	hub        string
 	timer      *util.SimpleTimer
 	httpClient *http.Client
@@ -50,26 +50,32 @@ type ServiceRegister struct {
 }
 
 //NewServiceRegister :new service register
-func NewServiceRegister(srv Service) *ServiceRegister {
-	s := &ServiceRegister{
-		srv:        srv,
+func NewServiceRegister(service Service) (register *ServiceRegister, err error) {
+	r := &ServiceRegister{
+		service:    service,
 		hub:        fmt.Sprintf("http://ip:%d/rest/register", ServiceHubPort),
 		httpClient: http.DefaultClient,
 	}
 
-	srvJSON, _ := json.Marshal(srv)
-	jsonReader := strings.NewReader(string(srvJSON))
-	s.req, _ = http.NewRequest("POST", s.hub, jsonReader)
-	s.timer = util.NewSimpleTimer(ServiceRegisterInterval*time.Second, s.register)
+	var serviceJSON []byte
+	if serviceJSON, err = json.Marshal(r.service); err != nil {
+		return nil, err
+	}
 
-	return s
+	jsonReader := strings.NewReader(string(serviceJSON))
+	if r.req, err = http.NewRequest("POST", r.hub, jsonReader); err != nil {
+		return nil, err
+	}
+
+	r.timer = util.NewSimpleTimer(ServiceRegisterInterval*time.Second, r.register)
+	return r, err
 }
 
-func (s *ServiceRegister) register() {
+func (r *ServiceRegister) register() {
 	var resp *http.Response
 	var err error
 
-	if resp, err = s.httpClient.Do(s.req); err != nil {
+	if resp, err = r.httpClient.Do(r.req); err != nil {
 		fmt.Printf("registe service failed %s", err)
 		return
 	}
@@ -92,11 +98,11 @@ func (s *ServiceRegister) register() {
 }
 
 //Start :start register
-func (s *ServiceRegister) Start(srv Service) {
-	s.timer.Start()
+func (r *ServiceRegister) Start() {
+	r.timer.Start()
 }
 
 //Stop :stop register
-func (s *ServiceRegister) Stop() {
-	s.timer.Stop()
+func (r *ServiceRegister) Stop() {
+	r.timer.Stop()
 }
