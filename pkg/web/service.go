@@ -50,10 +50,10 @@ type ServiceRegister struct {
 }
 
 //NewServiceRegister :new service register
-func NewServiceRegister(ip string, srv Service) *ServiceRegister {
+func NewServiceRegister(srv Service) *ServiceRegister {
 	s := &ServiceRegister{
 		srv:        srv,
-		hub:        fmt.Sprintf("http://%s:%d/rest/register", ip, ServiceHubPort),
+		hub:        fmt.Sprintf("http://ip:%d/rest/register", ServiceHubPort),
 		httpClient: http.DefaultClient,
 	}
 
