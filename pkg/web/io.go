@@ -9,7 +9,7 @@ type RestPagingQuery struct {
 	Start   int    `form:"start,defalut=0" json:"start"`
 	Limit   int    `form:"limit,default=1000" json:"limit"`
 	Sort    string `form:"sort" json:"sort"`
-	Dir     string `form:"dir" json:"dir"`
+	Dir     string `form:"dir,default=asc" json:"dir"`
 	Keyword string `form:"keyword" json:"keyword"`
 }
 
