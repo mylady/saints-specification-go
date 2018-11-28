@@ -6,11 +6,11 @@ package web
 
 //RestPagingQuery :query parameter for paging rest service
 type RestPagingQuery struct {
-	Start   int    `json:"start"`
-	Limit   int    `json:"limit"`
-	Sort    string `json:"sort"`
-	Dir     string `json:"dir"`
-	Keyword string `json:"keyword"`
+	Start   int    `form:"start,defalut=0" json:"start"`
+	Limit   int    `form:"limit,default=1000" json:"limit"`
+	Sort    string `form:"sort" json:"sort"`
+	Dir     string `form:"dir" json:"dir"`
+	Keyword string `form:"keyword" json:"keyword"`
 }
 
 //RestResponse :response for rest service
