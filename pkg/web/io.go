@@ -4,6 +4,15 @@ package web
 	Rest service
 */
 
+//Pager :interface for http paging
+type Pager interface {
+	GetStart() int
+	GetLimit() int
+	GetSort() string
+	GetDir() string
+	GetKeyword() string
+}
+
 //RestPagingQuery :query parameter for paging rest service
 type RestPagingQuery struct {
 	Start   int    `form:"start,defalut=0" json:"start"`
@@ -11,6 +20,31 @@ type RestPagingQuery struct {
 	Sort    string `form:"sort" json:"sort"`
 	Dir     string `form:"dir,default=asc" json:"dir"`
 	Keyword string `form:"keyword" json:"keyword"`
+}
+
+//GetStart :impl pager
+func (r *RestPagingQuery) GetStart() int {
+	return r.Start
+}
+
+//GetLimit :impl pager
+func (r *RestPagingQuery) GetLimit() int {
+	return r.Limit
+}
+
+//GetSort :impl pager
+func (r *RestPagingQuery) GetSort() string {
+	return r.Sort
+}
+
+//GetDir :impl pager
+func (r *RestPagingQuery) GetDir() string {
+	return r.Dir
+}
+
+//GetKeyword :impl pager
+func (r *RestPagingQuery) GetKeyword() string {
+	return r.Keyword
 }
 
 //RestResponse :response for rest service
