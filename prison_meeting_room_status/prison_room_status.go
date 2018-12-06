@@ -4,4 +4,5 @@ const (
 	Unavailable = 0
 	Free        = 1
 	Using       = 2
+	Locked      = 3
 )
