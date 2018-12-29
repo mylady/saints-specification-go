@@ -92,7 +92,7 @@ const (
 	ZhongXinWeiRFIDSDK                = 87
 	XuFeiPowerGridTCP                 = 88
 	XuFeiIrAlarmTCP                   = 89
-	JieAnPerimeterSDK                 = 90
+	JieAnPerimeterTCP                 = 90
 	SiNiuTeEnvMonitorREST             = 91
 
 	//saints define
