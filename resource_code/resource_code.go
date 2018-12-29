@@ -15,6 +15,7 @@ const (
 	AirMonitor        = 9
 	RFIDTag           = 10
 	RelayModule       = 11
+	Perimeter         = 12
 
 	//front-end virtual security device
 	DecodeChannel       = 256

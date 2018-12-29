@@ -23,4 +23,5 @@ const (
 	SetTvwallLayout      = 19
 	OpenDoor             = 20
 	CloseDoor            = 21
+	ResetArm             = 22
 )
