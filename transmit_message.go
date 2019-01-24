@@ -33,4 +33,3 @@ func NewMessage(content string, messageType int, receivers []string) (message Tr
 	}
 	return
 }
-
