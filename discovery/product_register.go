@@ -3,6 +3,7 @@ package discovery
 import (
 	"encoding/json"
 	"time"
+
 	"github.com/mylady/saints-specification-go"
 )
 
