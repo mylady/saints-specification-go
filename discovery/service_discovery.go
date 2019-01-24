@@ -19,13 +19,14 @@ func NewServiceDiscovery(p string) *ServiceDiscovery {
 	}
 }
 
-func (this *ServiceDiscovery) GetService(servtype uint) (target saints_specification_go.ProtocolService, err error) {
+func (this *ServiceDiscovery) GetService(servtype uint) (targets []saints_specification_go.ProtocolService, err error) {
 	var services []saints_specification_go.ProtocolService
+	targets = make([]saints_specification_go.ProtocolService, 0)
 	found := false
 	if services, err = this.getServices(); err == nil {
 		for _, service := range services {
 			if service.ServiceType == servtype {
-				target = service
+				targets = append(targets, service)
 				found = true
 				break
 			}
@@ -35,7 +36,7 @@ func (this *ServiceDiscovery) GetService(servtype uint) (target saints_specifica
 			err = errors.New("service not found")
 		}
 	}
-	return target, err
+	return targets, err
 }
 
 func (this *ServiceDiscovery) getServices() (services []saints_specification_go.ProtocolService, err error) {

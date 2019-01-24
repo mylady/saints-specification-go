@@ -12,11 +12,11 @@ func InitServiceDiscovery(proxy string) {
 	servdiscov = NewServiceDiscovery(proxy)
 }
 
-func GetService(servtype uint) (target saints_specification_go.ProtocolService, err error) {
+func GetService(servtype uint) (targets []saints_specification_go.ProtocolService, err error) {
 	if servdiscov == nil {
 		err = errors.New("not initialized")
 	} else {
-		target, err = servdiscov.GetService(servtype)
+		targets, err = servdiscov.GetService(servtype)
 	}
 	return
 }
