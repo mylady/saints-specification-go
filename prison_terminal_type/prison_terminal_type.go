@@ -6,5 +6,4 @@ const (
 	ArraignTerminal          = 2
 	FrontSideMeetingTerminal = 3
 	BackSideMeetingTerminal  = 4
-	DisplayPlate             = 5
 )
