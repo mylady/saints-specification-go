@@ -12,4 +12,5 @@ const (
 	FireProtection     = 8
 	Vehicle            = 9
 	SecurityManage     = 10
+	Others             = 11
 )
