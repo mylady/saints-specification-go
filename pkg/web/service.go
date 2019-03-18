@@ -22,7 +22,7 @@ type Service struct {
 const ServiceIPHolder = "ip"
 
 //ServiceRegisterInterval :register interval
-const ServiceRegisterInterval = 10
+const ServiceRegisterInterval = 10 * time.Second
 
 //Service type enum
 const (
@@ -44,7 +44,7 @@ var ServiceTypeDict = map[int]string{
 type ServiceRegister struct {
 	service    Service
 	hub        string
-	timer      *util.SimpleTimer
+	timer      *util.SimpleTicker
 	httpClient *http.Client
 	req        *http.Request
 }
@@ -67,7 +67,7 @@ func NewServiceRegister(ip string, service Service) (register *ServiceRegister, 
 		return nil, err
 	}
 
-	r.timer = util.NewSimpleTimer(ServiceRegisterInterval*time.Second, r.register)
+	r.timer = util.NewSimpleTicker(ServiceRegisterInterval, r.register)
 	return r, err
 }
 
