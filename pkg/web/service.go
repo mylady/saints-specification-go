@@ -46,7 +46,6 @@ type ServiceRegister struct {
 	hub        string
 	timer      *util.SimpleTicker
 	httpClient *http.Client
-	req        *http.Request
 }
 
 //NewServiceRegister :new service register
@@ -57,25 +56,28 @@ func NewServiceRegister(ip string, service Service) (register *ServiceRegister, 
 		httpClient: http.DefaultClient,
 	}
 
-	var serviceJSON []byte
-	if serviceJSON, err = json.Marshal(r.service); err != nil {
-		return nil, err
-	}
-
-	jsonReader := strings.NewReader(string(serviceJSON))
-	if r.req, err = http.NewRequest("POST", r.hub, jsonReader); err != nil {
-		return nil, err
-	}
-
 	r.timer = util.NewSimpleTicker(ServiceRegisterInterval, r.register)
 	return r, err
 }
 
 func (r *ServiceRegister) register() {
+	var req *http.Request
 	var resp *http.Response
 	var err error
 
-	if resp, err = r.httpClient.Do(r.req); err != nil {
+	var serviceJSON []byte
+	if serviceJSON, err = json.Marshal(r.service); err != nil {
+		fmt.Printf("service serialize failed %s\n", err)
+		return
+	}
+
+	jsonReader := strings.NewReader(string(serviceJSON))
+	if req, err = http.NewRequest("POST", r.hub, jsonReader); err != nil {
+		fmt.Printf("create request failed %s\n", err)
+		return
+	}
+
+	if resp, err = r.httpClient.Do(req); err != nil {
 		fmt.Printf("registe service failed %s\n", err)
 		return
 	}
