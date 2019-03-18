@@ -76,24 +76,24 @@ func (r *ServiceRegister) register() {
 	var err error
 
 	if resp, err = r.httpClient.Do(r.req); err != nil {
-		fmt.Printf("registe service failed %s", err)
+		fmt.Printf("registe service failed %s\n", err)
 		return
 	}
 
 	var respBytes []byte
 	if respBytes, err = ioutil.ReadAll(resp.Body); err != nil {
-		fmt.Printf("registe service failed %s", err)
+		fmt.Printf("registe service failed %s\n", err)
 		return
 	}
 
 	var restResp RestResponse
 	if err = json.Unmarshal(respBytes, &restResp); err != nil {
-		fmt.Printf("registe service failed %s", err)
+		fmt.Printf("registe service failed %s\n", err)
 		return
 	}
 
 	if !restResp.Result {
-		fmt.Printf("registe service failed %s", restResp.ErrMsg)
+		fmt.Printf("registe service failed %s\n", restResp.ErrMsg)
 	}
 }
 
