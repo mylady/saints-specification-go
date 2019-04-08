@@ -22,17 +22,14 @@ func NewServiceDiscovery(p string) *ServiceDiscovery {
 func (this *ServiceDiscovery) GetService(servtype uint) (targets []saints_specification_go.ProtocolService, err error) {
 	var services []saints_specification_go.ProtocolService
 	targets = make([]saints_specification_go.ProtocolService, 0)
-	found := false
 	if services, err = this.getServices(); err == nil {
 		for _, service := range services {
 			if service.ServiceType == servtype {
 				targets = append(targets, service)
-				found = true
-				break
 			}
 		}
 
-		if !found {
+		if len(targets) == 0 {
 			err = errors.New("service not found")
 		}
 	}

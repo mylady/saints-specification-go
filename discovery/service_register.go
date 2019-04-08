@@ -5,6 +5,8 @@ import (
 	"time"
 
 	"strings"
+
+	"github.com/mylady/saints-specification-go"
 )
 
 type ServiceRegister struct {
