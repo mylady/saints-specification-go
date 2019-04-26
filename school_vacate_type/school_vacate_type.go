@@ -4,5 +4,6 @@ const (
 	Vacation = 0
 	Business = 1
 	Iillness = 2
-	Other    = 3
+	Exchange = 3
+	Other    = 100
 )
