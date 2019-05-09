@@ -31,6 +31,9 @@ const (
 	ServiceTypeFileHub
 	ServiceTypeGIS
 	ServiceTypeCloudProxy
+	ServiceTypeLog
+	ServiceTypeEvent
+	ServiceTypeTimeLine
 )
 
 //ServiceTypeDict :service type name dict
@@ -40,6 +43,9 @@ var ServiceTypeDict = map[int]string{
 	ServiceTypeFileHub:    "文件管理服务",
 	ServiceTypeGIS:        "地理信息服务",
 	ServiceTypeCloudProxy: "云代理服务",
+	ServiceTypeLog:        "日志服务",
+	ServiceTypeEvent:      "事件服务",
+	ServiceTypeTimeLine:   "时间流服务",
 }
 
 //ServiceRegister :service register
