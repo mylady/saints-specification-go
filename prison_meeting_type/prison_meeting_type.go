@@ -6,4 +6,6 @@ const (
 	LawyerMeeting   = 2
 	FamliyMeeting   = 3
 	SignArraignment = 4
+	LocalJudicial   = 5
+	Other           = 100
 )
