@@ -5,4 +5,5 @@ const (
 	Arraignment = 1
 	Meeting     = 2
 	Special     = 3
+	Other       = 100
 )
