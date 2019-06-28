@@ -26,3 +26,12 @@ const (
 	DNS definition
 
 */
+
+/*
+	Kafka and socketio
+*/
+const (
+	InternalTopic = "internal"
+	TransmitTopic = "transmit"
+	IoEvent       = "message_arrived"
+)
