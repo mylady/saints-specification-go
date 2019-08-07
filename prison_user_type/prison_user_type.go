@@ -7,4 +7,6 @@ const (
 	ArraignPolice         = 3
 	MeetingRegisterPolice = 4
 	RegisterArraignPolice = 5
+	DistrictPatrolPolice  = 6
+	DistrictManagePolice  = 7
 )
