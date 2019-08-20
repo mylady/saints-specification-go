@@ -43,8 +43,8 @@ func Post(url string, data []byte) (res []byte, err error) {
 				res = body
 			}
 		}
-		response.Body.Close()
 	}
+	defer response.Body.Close()
 	return res, err
 }
 
@@ -70,8 +70,8 @@ func PostBasicAuth(url string, username string, userpwd string, data []byte) (re
 					res = body
 				}
 			}
-			response.Body.Close()
 		}
+		defer response.Body.Close()
 	}
 	return res, err
 }
@@ -91,8 +91,8 @@ func Put(url string, data []byte) (res []byte, err error) {
 					res = body
 				}
 			}
-			response.Body.Close()
 		}
+		defer response.Body.Close()
 	}
 	return res, err
 }
@@ -119,8 +119,8 @@ func PutBasicAuth(url string, username string, userpwd string, data []byte) (res
 					res = body
 				}
 			}
-			response.Body.Close()
 		}
+		defer response.Body.Close()
 	}
 	return res, err
 }
@@ -140,8 +140,8 @@ func Delete(url string, data []byte) (res []byte, err error) {
 					res = body
 				}
 			}
-			response.Body.Close()
 		}
+		defer response.Body.Close()
 	}
 	return res, err
 }
@@ -168,8 +168,8 @@ func DeleteBasicAuth(url string, username string, userpwd string, data []byte) (
 					res = body
 				}
 			}
-			response.Body.Close()
 		}
+		defer response.Body.Close()
 	}
 	return res, err
 }
@@ -183,6 +183,7 @@ func Get(url string) (data []byte, err error) {
 			}
 		}
 	}
+	defer response.Body.Close()
 	return data, err
 }
 
@@ -207,8 +208,8 @@ func GetBasicAuth(url string, username string, userpwd string) (res []byte, err 
 					res = body
 				}
 			}
-			response.Body.Close()
 		}
+		defer response.Body.Close()
 	}
 	return res, err
 }
