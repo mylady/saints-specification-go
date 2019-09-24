@@ -47,6 +47,13 @@ const (
 	CameraTypeGun  = 1
 )
 
+//VideoAnalyseChannelType
+const (
+	AnalyseTypeFace         = 0
+	AnalyseTypeBehavior     = 1
+	AnalyseTypeVideoQuality = 2
+)
+
 //DeviceStatus
 const (
 	StatusNormal     = 0
