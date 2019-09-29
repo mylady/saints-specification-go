@@ -5,4 +5,5 @@ const (
 	EveryDay   = 1
 	EveryWeek  = 2
 	EveryMonth = 3
+	EveryYear  = 4
 )
