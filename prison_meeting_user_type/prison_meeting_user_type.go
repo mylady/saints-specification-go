@@ -4,5 +4,7 @@ const (
 	Police   = 0
 	Lawyer   = 1
 	Relative = 2
-	Other    = 3
+	Judicial = 3
+	Court    = 4
+	Other    = 100
 )

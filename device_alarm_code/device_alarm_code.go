@@ -58,6 +58,8 @@ const (
 	PowergridOpenAlarm  = 53
 	PowergridTouchAlarm = 54
 	PowergridShortAlarm = 55
+	PerimeterAlarm      = 56
+	IrAlarm             = 57
 )
 
 var AlarmCodeMap = make(map[int]string)
@@ -121,4 +123,7 @@ func init() {
 	AlarmCodeMap[PowergridOpenAlarm] = "高压断网报警"
 	AlarmCodeMap[PowergridTouchAlarm] = "高压触网报警"
 	AlarmCodeMap[PowergridShortAlarm] = "高压短路报警"
+
+	AlarmCodeMap[PerimeterAlarm] = "周界报警"
+	AlarmCodeMap[IrAlarm] = "红外报警"
 }

@@ -10,4 +10,5 @@ const (
 	FingerBegin = 6
 	FingerEnd   = 7
 	Audit       = 8
+	Queue       = 9
 )

@@ -11,5 +11,6 @@ const (
 	Court           = 7
 	SingleCell      = 8
 	Encaged         = 9
-	Other           = 10
+	JudicialMeeting = 10
+	Other           = 100
 )
