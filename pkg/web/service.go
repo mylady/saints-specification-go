@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mylady/saints-specification-go/pkg/util"
+	"github.com/mylady/saints-specification-go/v2/pkg/util"
 )
 
 //Service :saints service struct
