@@ -1,4 +1,4 @@
-package def
+package types
 
 //EnvValue :struct for env_monitor
 type EnvValue struct {

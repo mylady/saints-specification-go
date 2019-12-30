@@ -32,21 +32,32 @@ func (c *DBConfig) PostgresqlConn() string {
 
 //AppConfig :config for app
 type AppConfig struct {
-	Env       string                 `json:"env"`
-	Port      int                    `json:"port"`
-	Hub       string                 `json:"hub"`
-	GZip      bool                   `json:"gzip"`
-	HTTPS     bool                   `json:"https"`
-	HTTPSPort int                    `json:"https_port"`
-	CertFile  string                 `json:"cert_file"`
-	CertKey   string                 `json:"cert_key"`
-	Extra     map[string]interface{} `json:"extra"`
+	Env       string         `json:"env"`
+	Port      int            `json:"port"`
+	Hub       string         `json:"hub"`
+	GZip      bool           `json:"gzip"`
+	Session   *SessionConfig `json:"session"`
+	HTTPS     bool           `json:"https"`
+	HTTPSPort int            `json:"https_port"`
+	CertFile  string         `json:"cert_file"`
+	CertKey   string         `json:"cert_key"`
+}
+
+//SessionConfig :http session config
+type SessionConfig struct {
+	SignKeys  []string `json:"sign_keys"`
+	CookieKey string   `json:"cookie_key"`
+	MaxAge    int      `json:"max_age"`
+	Secure    bool     `json:"secure"`
+	HTTPOnly  bool     `json:"http_only"`
+	Renew     bool     `json:"renew"`
 }
 
 //Config :config for web app
 type Config struct {
-	App *AppConfig           `json:"app"`
-	DB  map[string]*DBConfig `json:"db"`
+	App   *AppConfig           `json:"app"`
+	DB    map[string]*DBConfig `json:"db"`
+	Extra interface{}          `json:"extra"`
 }
 
 //NewConfig :create new with default path

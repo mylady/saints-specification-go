@@ -1,4 +1,4 @@
-package def
+package types
 
 //InternalMessage :message struct for internal data exchange
 type InternalMessage struct {
