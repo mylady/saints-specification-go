@@ -43,14 +43,26 @@ type AppConfig struct {
 	CertKey   string         `json:"cert_key"`
 }
 
+//SessionType :sesssion store type
+type SessionType int
+
+//session type enum
+const (
+	SessionTypeMem SessionType = iota
+	SessionTypeFile
+	SessionTypeRedis
+	SessionTypeMemcache
+)
+
 //SessionConfig :http session config
 type SessionConfig struct {
-	SignKeys  []string `json:"sign_keys"`
-	CookieKey string   `json:"cookie_key"`
-	MaxAge    int      `json:"max_age"`
-	Secure    bool     `json:"secure"`
-	HTTPOnly  bool     `json:"http_only"`
-	Renew     bool     `json:"renew"`
+	SessionStore SessionType `json:"session_store"`
+	SignKeys     []string    `json:"sign_keys"`
+	CookieKey    string      `json:"cookie_key"`
+	MaxAge       int         `json:"max_age"`
+	Secure       bool        `json:"secure"`
+	HTTPOnly     bool        `json:"http_only"`
+	Renew        bool        `json:"renew"`
 }
 
 //Config :config for web app
