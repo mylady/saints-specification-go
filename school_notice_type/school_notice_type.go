@@ -13,4 +13,6 @@ const (
 	InstantReportFeedback  = 9
 	InstantReportFinish    = 10
 	UrgeCenterNotification = 11
+	EnquiryNotice          = 12
+	SafetyReportNotice     = 13
 )
