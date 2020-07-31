@@ -5,4 +5,5 @@ const (
 	CenterNormal   = 1
 	SchoolSecurity = 2
 	CenterSecurity = 3
+	CenterUniform  = 4
 )
