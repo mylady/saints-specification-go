@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 )
 
 //DBConfig :database config
@@ -79,6 +80,10 @@ func NewConfig() (c *Config, err error) {
 
 //NewConfigWithPath :create new config with given path
 func NewConfigWithPath(p string) (c *Config, err error) {
+	if !filepath.IsAbs(p) {
+		p, _ = filepath.Abs(p)
+	}
+
 	if _, err := os.Stat(p); err != nil {
 		return nil, err
 	}
