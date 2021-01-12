@@ -1,5 +1,38 @@
 package spec
 
+//ResourceCode
+const (
+	ResourceCodeUnknown        = -1
+	ResourceCodeEncoderChannel = 0
+	ResourceCodeDoorPoint      = 1
+	ResourceCodeDoor           = 2
+	ResourceCodeAlarm          = 3
+	ResourceCodeCallSlave      = 4
+	ResourceCodeCallMaster     = 5
+	ResourceCodePowerGrid      = 6
+	ResourceCodeEnvMonitor     = 7
+	ResourceCodeRFIDTag        = 8
+	ResourceCodeRelayModule    = 9
+	ResourceCodeLED            = 10
+
+	ResourceCodeDecoderChannel      = 128
+	ResourceCodeMatrixChannel       = 129
+	ResourceCodeScreenOutput        = 130
+	ResourceCodeVideoAnalyseChannel = 131
+
+	ResourceCodeEncoder          = 256
+	ResourceCodeDecoder          = 257
+	ResourceCodeMatrixController = 258
+	ResourceCodeTvWallController = 259
+	ResourceCodeAlarmHost        = 260
+	ResourceCodeDoorController   = 261
+	ResourceCodePowerGridHost    = 262
+	ResourceCodeEnvMonitorHost   = 263
+	ResourceCodeUPSHost          = 264
+	ResourceCodeVideoAnalyseHost = 265
+	ResourceCodeRelayHost        = 266
+)
+
 //DeviceEventType
 const (
 	EventTypeUnknown = -1
