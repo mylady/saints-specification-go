@@ -1,4 +1,4 @@
-package web
+package spec
 
 import (
 	"encoding/json"
@@ -7,8 +7,6 @@ import (
 	"net/http"
 	"strings"
 	"time"
-
-	"github.com/mylady/saints-specification-go/v2/pkg/util"
 )
 
 //Service :saints service struct
@@ -54,7 +52,7 @@ var ServiceTypeDict = map[int]string{
 type ServiceRegister struct {
 	service    Service
 	hub        string
-	timer      *util.SimpleTicker
+	timer      *SimpleTicker
 	httpClient *http.Client
 }
 
@@ -66,7 +64,7 @@ func NewServiceRegister(ip string, service Service) (register *ServiceRegister, 
 		httpClient: http.DefaultClient,
 	}
 
-	r.timer = util.NewSimpleTicker(ServiceRegisterInterval, r.register)
+	r.timer = NewSimpleTicker(ServiceRegisterInterval, r.register)
 	return r, err
 }
 

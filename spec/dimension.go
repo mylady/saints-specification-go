@@ -1,4 +1,4 @@
-package types
+package spec
 
 //TwoDimension :two dimension def
 type TwoDimension struct {

@@ -1,4 +1,4 @@
-package web
+package spec
 
 /*
 	Rest service
@@ -16,7 +16,7 @@ type Pager interface {
 //RestPagingQuery :query parameter for paging rest service
 type RestPagingQuery struct {
 	Start   int    `form:"start,defalut=0" json:"start"`
-	Limit   int    `form:"limit,default=1000" json:"limit"`
+	Limit   int    `form:"limit,default=100" json:"limit"`
 	Sort    string `form:"sort" json:"sort"`
 	Dir     string `form:"dir,default=asc" json:"dir"`
 	Keyword string `form:"keyword" json:"keyword"`

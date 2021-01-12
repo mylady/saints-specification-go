@@ -1,4 +1,4 @@
-package web
+package spec
 
 import (
 	"encoding/json"
