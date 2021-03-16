@@ -15,4 +15,6 @@ const (
 	UrgeCenterNotification = 11
 	EnquiryNotice          = 12
 	SafetyReportNotice     = 13
+	UrgeCheckRedress       = 14
+	UrgeEnquiryTask        = 15
 )
