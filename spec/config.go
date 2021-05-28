@@ -68,9 +68,9 @@ type SessionConfig struct {
 
 //Config :config for web app
 type Config struct {
-	App   *AppConfig           `json:"app"`
-	DB    map[string]*DBConfig `json:"db"`
-	Extra interface{}          `json:"extra"`
+	App   *AppConfig             `json:"app"`
+	DB    map[string]*DBConfig   `json:"db"`
+	Extra map[string]interface{} `json:"extra"`
 }
 
 //NewConfig :create new with default path

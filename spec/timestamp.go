@@ -19,7 +19,7 @@ func (ts *Timestamp) String() string {
 
 //MarshalJSON :marshal to json
 func (ts *Timestamp) MarshalJSON() ([]byte, error) {
-	return []byte(fmt.Sprintf("%s", ts.value.Format("2006-01-02 15:04:05"))), nil
+	return []byte(ts.value.Format("2006-01-02 15:04:05")), nil
 }
 
 //UnmarshalJSON :unmarshal from json
@@ -43,7 +43,7 @@ func (ts *Timestamp) UnmarshalJSON(data []byte) (err error) {
 
 //MarshalText :marshal to text
 func (ts *Timestamp) MarshalText() ([]byte, error) {
-	return []byte(fmt.Sprintf("%s", ts.value.Format("2006-01-02 15:04:05"))), nil
+	return []byte(ts.value.Format("2006-01-02 15:04:05")), nil
 }
 
 // Value insert timestamp into db need this function.
