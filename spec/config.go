@@ -103,10 +103,7 @@ func NewConfigWithPath(p string) (c *Config, err error) {
 
 //IsDebug :if debug is enabled
 func (c *Config) IsDebug() bool {
-	if c.App.Env == EnvDevelopment {
-		return true
-	}
-	return false
+	return c.App.Env == EnvDevelopment
 }
 
 //CanHTTPS :can run https server
