@@ -68,7 +68,7 @@ func NewServiceRegister(ip string, service Service) (register *ServiceRegister, 
 	return r, err
 }
 
-func (r *ServiceRegister) register() {
+func (r *ServiceRegister) register(ticker *SimpleTicker) {
 	var req *http.Request
 	var resp *http.Response
 	var err error

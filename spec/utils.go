@@ -5,7 +5,7 @@ import (
 )
 
 //TickerFunc :ticker function
-type TickerFunc func()
+type TickerFunc func(ticker *SimpleTicker)
 
 //SimpleTicker :time.Ticker wrapper
 type SimpleTicker struct {
@@ -14,7 +14,7 @@ type SimpleTicker struct {
 	fun    TickerFunc
 }
 
-//NewSimpleTicker :create new timer
+//NewSimpleTicker :create new ticker
 func NewSimpleTicker(d time.Duration, f TickerFunc) *SimpleTicker {
 	return &SimpleTicker{
 		dur: d,
@@ -22,23 +22,23 @@ func NewSimpleTicker(d time.Duration, f TickerFunc) *SimpleTicker {
 	}
 }
 
-//Start :start timer
+//Start :start ticker
 func (st *SimpleTicker) Start() {
 	st.ticker = time.NewTicker(st.dur)
 	go func() {
 		for range st.ticker.C {
-			st.fun()
+			st.fun(st)
 		}
 	}()
 }
 
-//Stop :stop timer
+//Stop :stop ticker
 func (st *SimpleTicker) Stop() {
 	st.ticker.Stop()
 }
 
 //TimerFunc :timer function
-type TimerFunc func()
+type TimerFunc func(timer *SimpleTimer)
 
 //SimpleTimer :time.Timer wrapper
 type SimpleTimer struct {
@@ -60,7 +60,7 @@ func (st *SimpleTimer) Start() {
 	st.timer = time.NewTimer(st.dur)
 	go func() {
 		<-st.timer.C
-		st.fun()
+		st.fun(st)
 	}()
 }
 
