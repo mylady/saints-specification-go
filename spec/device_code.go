@@ -31,6 +31,7 @@ const (
 	ResourceCodeUPSHost          = 264
 	ResourceCodeVideoAnalyseHost = 265
 	ResourceCodeRelayHost        = 266
+	ResouceCodeVideoGBServer     = 267
 )
 
 //DeviceEventType
