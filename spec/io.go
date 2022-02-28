@@ -47,6 +47,47 @@ func (r *RestPagingQuery) GetKeyword() string {
 	return r.Keyword
 }
 
+type ComplexSort struct {
+	Sort string `json:"sort"`
+	Dir  string `json:"dir"`
+}
+
+//ComplexPager :interface for http post paging
+type ComplexPager interface {
+	GetStart() int
+	GetLimit() int
+	GetComplexSorts() []ComplexSort
+	GetKeyword() string
+}
+
+//ComplexRestPagingQuery :query parameter for post paging rest service
+type ComplexRestPagingQuery struct {
+	Start   int           `json:"start"`
+	Limit   int           `json:"limit"`
+	Sorts   []ComplexSort `json:"sorts"`
+	Keyword string        `json:"keyword"`
+}
+
+//GetStart :impl pager
+func (r *ComplexRestPagingQuery) GetStart() int {
+	return r.Start
+}
+
+//GetLimit :impl pager
+func (r *ComplexRestPagingQuery) GetLimit() int {
+	return r.Limit
+}
+
+//GetSort :impl pager
+func (r *ComplexRestPagingQuery) GetSorts() []ComplexSort {
+	return r.Sorts
+}
+
+//GetKeyword :impl pager
+func (r *ComplexRestPagingQuery) GetKeyword() string {
+	return r.Keyword
+}
+
 //RestResponse :response for rest service
 type RestResponse struct {
 	Result  bool        `json:"result"`
