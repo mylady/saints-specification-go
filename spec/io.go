@@ -79,7 +79,7 @@ func (r *ComplexRestPagingQuery) GetLimit() int {
 }
 
 //GetSort :impl pager
-func (r *ComplexRestPagingQuery) GetComplexSorts() []ComplexSort {
+func (r *ComplexRestPagingQuery) GetSorts() []ComplexSort {
 	return r.Sorts
 }
 
