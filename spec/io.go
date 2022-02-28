@@ -48,15 +48,15 @@ func (r *RestPagingQuery) GetKeyword() string {
 }
 
 type ComplexSort struct {
-	Sort string `json:"sort"`
-	Dir  string `json:"dir"`
+	Field string `json:"field"`
+	Dir   string `json:"dir"`
 }
 
 //ComplexPager :interface for http post paging
 type ComplexPager interface {
 	GetStart() int
 	GetLimit() int
-	GetComplexSorts() []ComplexSort
+	GetSorts() []ComplexSort
 	GetKeyword() string
 }
 
