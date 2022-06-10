@@ -188,3 +188,10 @@ const (
 	ControlCodeAcTemperature        = 32
 	ControlCodeCmd                  = 33
 )
+
+//VideoEncode
+const (
+	VideoEncodeUnknown = -1
+	VideoEncodeH264    = 0
+	VideoEncodeH265    = 1
+)
