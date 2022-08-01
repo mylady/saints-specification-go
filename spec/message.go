@@ -23,7 +23,7 @@ const (
 
 //Message :message struct for external data exchange
 type Message struct {
-	Type    int    `json:"type"`
-	Content string `json:"content"`
-	Sender  string `json:"sender"`
+	Type    int         `json:"type"`
+	Content interface{} `json:"content"`
+	Sender  string      `json:"sender"`
 }
