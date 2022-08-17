@@ -1,6 +1,6 @@
 package spec
 
-//DoorValue :value for door
+// DoorValue :value for door
 type DoorValue struct {
 	PersonName     string `json:"person_name"`
 	PersonCard     string `json:"person_card"`
@@ -8,7 +8,7 @@ type DoorValue struct {
 	SceneImagePath string `jsoon:"scene_image_path"`
 }
 
-//EnvValue :value for env_monitor
+// EnvValue :value for env_monitor
 type EnvValue struct {
 	Temp float32 `json:"temp"`
 	Humi float32 `json:"humi"`
@@ -20,13 +20,18 @@ type EnvValue struct {
 	H2s  float32 `json:"h2s"`
 }
 
-//PowerGridValue : value for power grid
+// PowerGridValue : value for power grid
 type PowerGridValue struct {
 	Volter float32 `json:"volter"`
 	Elec   float32 `json:"elec"`
 }
 
-//RFIDTagValue :value for rfid tag
+// RelayVALUE : value for relay
+type RelayValue struct {
+	Open bool `json:"open"`
+}
+
+// RFIDTagValue :value for rfid tag
 type RFIDTagValue struct {
 	X                 float32 `json:"x"`
 	Y                 float32 `json:"y"`
@@ -40,7 +45,7 @@ type RFIDTagValue struct {
 	BloodPressureLow  float32 `json:"blood_pressure_low"`
 }
 
-//UPSValue :value for ups
+// UPSValue :value for ups
 type UPSValue struct {
 	BackupTime string  `json:"backup_time"`
 	Battery    string  `json:"battery"`
@@ -52,13 +57,13 @@ type UPSValue struct {
 	CElec      float32 `json:"c_elec"`
 }
 
-//CallValue :value for call
+// CallValue :value for call
 type CallValue struct {
 	Caller string `json:"caller"`
 	Called string `json:"called"`
 }
 
-//Face :value for face
+// Face :value for face
 type Face struct {
 	PersonID      string  `json:"person_id"`
 	PersonName    string  `json:"person_name"`
@@ -67,7 +72,7 @@ type Face struct {
 	FaceImagePath string  `json:"face_image_path"`
 }
 
-//CarPlate :value for car
+// CarPlate :value for car
 type CarPlate struct {
 	PlateNumber string `json:"plate_number"`
 	PlateColor  string `json:"plate_color"`
@@ -75,14 +80,14 @@ type CarPlate struct {
 	CarColor    string `json:"car_color"`
 }
 
-//VideoAnalyseType
+// VideoAnalyseType
 const (
 	VideoAnalyseTypeBehavior = 0
 	VideoAnalyseTypeFace     = 1
 	VideoAnalyseTypeCarPlate = 2
 )
 
-//VideoAnalyseValue :value for video analyse
+// VideoAnalyseValue :value for video analyse
 type VideoAnalyseValue struct {
 	AnalyseType    int      `json:"analyse_type"`
 	SceneImage     string   `json:"scene_image"`
