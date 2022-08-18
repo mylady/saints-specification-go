@@ -28,7 +28,8 @@ type PowerGridValue struct {
 
 // RelayVALUE : value for relay
 type RelayValue struct {
-	Open bool `json:"open"`
+	SwitchState int  `json:"switch_state"`
+	Enabled     bool `json:"enabled"`
 }
 
 // RFIDTagValue :value for rfid tag
