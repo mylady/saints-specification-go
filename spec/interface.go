@@ -1,6 +1,6 @@
 package spec
 
-//InterfaceCode
+// InterfaceCode
 const (
 	InterfaceCodeUnknown                           = -1
 	InterfaceCodeHaiKangVideoSDK                   = 0
@@ -118,9 +118,12 @@ const (
 	InterfaceCodeFeiFanAlarmHostTCPServer          = 112
 	InterfaceCodeYiTuVideoAnalyseHTTPServer        = 113
 	InterfaceCodeHanWeiAirMonitorUDPv2             = 114
+	InterfaceCodeXuFeiElecDoorTCP                  = 115
+	InterfaceCodeHanWeiElecDoorTCP                 = 116
+	InterfaceCodeSiFangBoRuiRelayPlatformREST      = 117
 )
 
-//DeviceEventData :device event data
+// DeviceEventData :device event data
 type DeviceEventData struct {
 	ResourceCode int    `json:"resource_code"`
 	Address      string `json:"address"`
