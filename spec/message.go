@@ -1,6 +1,8 @@
 package spec
 
-//MessageType
+import "encoding/json"
+
+// MessageType
 const (
 	MessageTypeUnknown       = -1
 	MessageTypeDeviceEvent   = 0
@@ -11,7 +13,7 @@ const (
 	MessageTypeOthers        = 100
 )
 
-//MessageTopic
+// MessageTopic
 const (
 	TopicDeviceEvent   = "saints-device-event"
 	TopicDeviceStatus  = "saints-device-status"
@@ -21,9 +23,9 @@ const (
 	TopicOthers        = "others"
 )
 
-//Message :message struct for external data exchange
+// Message :message struct for external data exchange
 type Message struct {
-	Type    int         `json:"type"`
-	Content interface{} `json:"content"`
-	Sender  string      `json:"sender"`
+	Type    int             `json:"type"`
+	Content json.RawMessage `json:"content"`
+	Sender  string          `json:"sender"`
 }
