@@ -34,6 +34,8 @@ type RelayValue struct {
 
 // RFIDTagValue :value for rfid tag
 type RFIDTagValue struct {
+	MapID             string  `json:"map_id"`
+	LocatorID         string  `json:"locator_id"`
 	X                 float32 `json:"x"`
 	Y                 float32 `json:"y"`
 	Z                 float32 `json:"z"`
