@@ -121,8 +121,9 @@ const (
 	InterfaceCodeXuFeiElecDoorTCP                  = 115
 	InterfaceCodeHanWeiElecDoorTCP                 = 116
 	InterfaceCodeSiFangBoRuiRelayPlatformREST      = 117
-	InterfaceCodeMeiZanMeiFaceAnalyseHTTP          = 118
-	InterfaceCodeDuYiRFIDHTTP                      = 119
+	InterfaceCodeMeiZanMeiFaceAnalyseHTTPServer    = 118
+	InterfaceCodeDuYiRFIDRest                      = 119
+	InterfaceCodeHeShiVideoAnalyseHTTPServer       = 120
 )
 
 // DeviceEventData :device event data

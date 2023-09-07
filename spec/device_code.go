@@ -1,6 +1,6 @@
 package spec
 
-//ResourceCode
+// ResourceCode
 const (
 	ResourceCodeUnknown        = -1
 	ResourceCodeEncoderChannel = 0
@@ -34,7 +34,7 @@ const (
 	ResourceCodeVideoGBServer    = 267
 )
 
-//DeviceEventType
+// DeviceEventType
 const (
 	EventTypeUnknown = -1
 	EventTypeStatus  = 0
@@ -43,7 +43,7 @@ const (
 	EventTypeFault   = 3
 )
 
-//DeviceEventCode
+// DeviceEventCode
 const (
 	EventCodeUnknown          = -1
 	EventCodeFlashOpen        = 0
@@ -56,7 +56,7 @@ const (
 	EventCodeFaceOpen         = 7
 )
 
-//DeviceAlarmCode
+// DeviceAlarmCode
 const (
 	AlarmCodeUnknown             = -1
 	AlarmCodeAreaAlarm           = 0
@@ -92,9 +92,11 @@ const (
 	AlarmCodePowerGridTouchAlarm = 30
 	AlarmCodePowerGridShortAlarm = 31
 	AlarmCodeVideoAnalyseAlarm   = 32
+	AlarmCodeHang                = 33
+	AlarmCodeCoverHeadSleep      = 34
 )
 
-//DeviceFaultCode
+// DeviceFaultCode
 const (
 	FaultCodeUnknown          = -1
 	FaultCodeMotionDetect     = 0
@@ -134,7 +136,7 @@ const (
 	FaultCodeLowBattery       = 34
 )
 
-//DeviceStatusCode
+// DeviceStatusCode
 const (
 	StatusCodeUnknown    = -1
 	StatusCodeNormal     = 0
@@ -150,7 +152,7 @@ const (
 	StatusCodeDataUpdate = 10
 )
 
-//DeviceControlCode
+// DeviceControlCode
 const (
 	ControlCodeStopInterfacer       = -1
 	ControlCodeAwayArm              = 0
@@ -189,7 +191,7 @@ const (
 	ControlCodeCmd                  = 33
 )
 
-//VideoEncode
+// VideoEncode
 const (
 	VideoEncodeUnknown = -1
 	VideoEncodeH264    = 0
