@@ -13,6 +13,7 @@ type EnvValue struct {
 	Temp float32 `json:"temp"`
 	Humi float32 `json:"humi"`
 	Hcho float32 `json:"hcho"`
+	Co   float32 `json:"co"`
 	Co2  float32 `json:"co2"`
 	Pm25 float32 `json:"pm25"`
 	Tvoc float32 `json:"tvoc"`
