@@ -3,12 +3,11 @@ package spec
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 )
 
-//DBConfig :database config
+// DBConfig :database config
 type DBConfig struct {
 	Host        string `json:"host"`
 	Port        int    `json:"port"`
@@ -19,19 +18,19 @@ type DBConfig struct {
 	PoolSetting *Pool  `json:"pool_setting"`
 }
 
-//Pool :database connection pool config
+// Pool :database connection pool config
 type Pool struct {
 	MaxOpen     int `json:"max_open"`      //max open connection int connection pool
 	MaxIdle     int `json:"max_idle"`      //max idle connection in connection pool
 	MaxLifeTime int `json:"max_life_time"` //max life time of connection in thread pool
 }
 
-//PostgresqlConn :get connection string for postgresql
+// PostgresqlConn :get connection string for postgresql
 func (c *DBConfig) PostgresqlConn() string {
 	return fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=%s", c.Host, c.Port, c.User, c.Password, c.Database, c.SSLMode)
 }
 
-//AppConfig :config for app
+// AppConfig :config for app
 type AppConfig struct {
 	Env       string         `json:"env"`
 	Port      int            `json:"port"`
@@ -44,10 +43,10 @@ type AppConfig struct {
 	CertKey   string         `json:"cert_key"`
 }
 
-//SessionType :sesssion store type
+// SessionType :sesssion store type
 type SessionType int
 
-//session type enum
+// session type enum
 const (
 	SessionTypeMem SessionType = iota
 	SessionTypeFile
@@ -55,7 +54,7 @@ const (
 	SessionTypeMemcache
 )
 
-//SessionConfig :http session config
+// SessionConfig :http session config
 type SessionConfig struct {
 	SessionStore SessionType `json:"session_store"`
 	SignKeys     []string    `json:"sign_keys"`
@@ -66,19 +65,19 @@ type SessionConfig struct {
 	Renew        bool        `json:"renew"`
 }
 
-//Config :config for web app
+// Config :config for web app
 type Config struct {
 	App   *AppConfig             `json:"app"`
 	DB    map[string]*DBConfig   `json:"db"`
 	Extra map[string]interface{} `json:"extra"`
 }
 
-//NewConfig :create new with default path
+// NewConfig :create new with default path
 func NewConfig() (c *Config, err error) {
 	return NewConfigWithPath(DefaultConfigPath)
 }
 
-//NewConfigWithPath :create new config with given path
+// NewConfigWithPath :create new config with given path
 func NewConfigWithPath(p string) (c *Config, err error) {
 	if !filepath.IsAbs(p) {
 		p, _ = filepath.Abs(p)
@@ -89,7 +88,7 @@ func NewConfigWithPath(p string) (c *Config, err error) {
 	}
 
 	var j []byte
-	if j, err = ioutil.ReadFile(p); err != nil {
+	if j, err = os.ReadFile(p); err != nil {
 		return nil, err
 	}
 
@@ -101,12 +100,12 @@ func NewConfigWithPath(p string) (c *Config, err error) {
 	return c, err
 }
 
-//IsDebug :if debug is enabled
+// IsDebug :if debug is enabled
 func (c *Config) IsDebug() bool {
 	return c.App.Env == EnvDevelopment
 }
 
-//CanHTTPS :can run https server
+// CanHTTPS :can run https server
 func (c *Config) CanHTTPS() bool {
 	if _, err := os.Stat(c.App.CertFile); err != nil {
 		return false

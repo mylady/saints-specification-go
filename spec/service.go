@@ -3,26 +3,26 @@ package spec
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 	"time"
 )
 
-//Service :saints service struct
+// Service :saints service struct
 type Service struct {
 	Address  string `json:"address"`
 	Type     int    `json:"type"`
 	Priority int    `json:"priority"`
 }
 
-//ServiceIPHolder :holder for address
+// ServiceIPHolder :holder for address
 const ServiceIPHolder = "ip"
 
-//ServiceRegisterInterval :register interval
+// ServiceRegisterInterval :register interval
 const ServiceRegisterInterval = 10 * time.Second
 
-//Service type enum
+// Service type enum
 const (
 	ServiceTypeIdentity = iota
 	ServiceTypeFileHub
@@ -35,7 +35,7 @@ const (
 	ServiceTypeTimeLine
 )
 
-//ServiceTypeDict :service type name dict
+// ServiceTypeDict :service type name dict
 var ServiceTypeDict = map[int]string{
 	ServiceTypeIdentity:   "身份认证服务",
 	ServiceTypeFileHub:    "文件管理服务",
@@ -48,7 +48,7 @@ var ServiceTypeDict = map[int]string{
 	ServiceTypeTimeLine:   "时间流服务",
 }
 
-//ServiceRegister :service register
+// ServiceRegister :service register
 type ServiceRegister struct {
 	service    Service
 	hub        string
@@ -56,7 +56,7 @@ type ServiceRegister struct {
 	httpClient *http.Client
 }
 
-//NewServiceRegister :new service register
+// NewServiceRegister :new service register
 func NewServiceRegister(ip string, service Service) (register *ServiceRegister, err error) {
 	r := &ServiceRegister{
 		service:    service,
@@ -91,7 +91,7 @@ func (r *ServiceRegister) register(ticker *SimpleTicker) {
 	}
 
 	var respBytes []byte
-	if respBytes, err = ioutil.ReadAll(resp.Body); err != nil {
+	if respBytes, err = io.ReadAll(resp.Body); err != nil {
 		fmt.Printf("registe service failed %s\n", err)
 		return
 	}
@@ -107,12 +107,12 @@ func (r *ServiceRegister) register(ticker *SimpleTicker) {
 	}
 }
 
-//Start :start register
+// Start :start register
 func (r *ServiceRegister) Start() {
 	r.timer.Start()
 }
 
-//Stop :stop register
+// Stop :stop register
 func (r *ServiceRegister) Stop() {
 	r.timer.Stop()
 }
