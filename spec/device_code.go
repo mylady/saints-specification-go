@@ -14,6 +14,7 @@ const (
 	ResourceCodeRFIDTag        = 8
 	ResourceCodeRelayModule    = 9
 	ResourceCodeLED            = 10
+	ResourceCodeRFIDLocator    = 11
 
 	ResourceCodeDecoderChannel      = 128
 	ResourceCodeMatrixChannel       = 129

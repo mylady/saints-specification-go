@@ -125,6 +125,7 @@ const (
 	InterfaceCodeDuYiRFIDRest                      = 119
 	InterfaceCodeHeShiVideoAnalyseHTTPServer       = 120
 	InterfaceCodeTengDaEnvMonistorMQTT             = 121
+	InterfaceCodeTengDaRFIDREST                    = 122
 )
 
 // DeviceEventData :device event data
