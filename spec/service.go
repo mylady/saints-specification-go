@@ -33,19 +33,21 @@ const (
 	ServiceTypeEvent
 	ServiceTypeLog
 	ServiceTypeTimeLine
+	ServiceTypeVideoRecord
 )
 
 // ServiceTypeDict :service type name dict
 var ServiceTypeDict = map[int]string{
-	ServiceTypeIdentity:   "身份认证服务",
-	ServiceTypeFileHub:    "文件管理服务",
-	ServiceTypeDevice:     "设备信息服务",
-	ServiceTypeCloudProxy: "云代理服务",
-	ServiceTypeMonitor:    "实时监控服务",
-	ServiceTypeMessageHub: "消息服务",
-	ServiceTypeEvent:      "事件服务",
-	ServiceTypeLog:        "日志服务",
-	ServiceTypeTimeLine:   "时间流服务",
+	ServiceTypeIdentity:    "身份认证服务",
+	ServiceTypeFileHub:     "文件管理服务",
+	ServiceTypeDevice:      "设备信息服务",
+	ServiceTypeCloudProxy:  "云代理服务",
+	ServiceTypeMonitor:     "实时监控服务",
+	ServiceTypeMessageHub:  "消息服务",
+	ServiceTypeEvent:       "事件服务",
+	ServiceTypeLog:         "日志服务",
+	ServiceTypeTimeLine:    "时间流服务",
+	ServiceTypeVideoRecord: "视频录制服务",
 }
 
 // ServiceRegister :service register
