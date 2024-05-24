@@ -110,7 +110,7 @@ const (
 	InterfaceCodeJunLingUPSHTTPServer              = 104
 	InterfaceCodeMaoTeRFIDREST                     = 105
 	InterfaceCodeMeiDiACModbusSERIAL               = 106
-	InterfaceCodeMeiDiACModbusTCP                  = 107
+	InterfaceCodeMeiDiACModbusTCPV4                = 107
 	InterfaceCodeYongLinRelaySERIAL                = 108
 	InterfaceCodeYongLinRelayTCP                   = 109
 	InterfaceCodeBiYiTeRelaySERIAL                 = 110
@@ -126,6 +126,9 @@ const (
 	InterfaceCodeHeShiVideoAnalyseHTTPServer       = 120
 	InterfaceCodeTengDaEnvMonistorMQTT             = 121
 	InterfaceCodeTengDaRFIDREST                    = 122
+	InterfaceCodeMeiDiACModbusTCPV5                = 123
+
+	InterfaceCodeSaintsDoor = 10001
 )
 
 // DeviceEventData :device event data
