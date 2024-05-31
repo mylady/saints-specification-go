@@ -15,6 +15,7 @@ const (
 	ResourceCodeRelayModule    = 9
 	ResourceCodeLED            = 10
 	ResourceCodeRFIDLocator    = 11
+	ResourceCodeAc             = 12
 
 	ResourceCodeDecoderChannel      = 128
 	ResourceCodeMatrixChannel       = 129
@@ -33,6 +34,7 @@ const (
 	ResourceCodeVideoAnalyseHost = 265
 	ResourceCodeRelayHost        = 266
 	ResourceCodeVideoGBServer    = 267
+	ResourceCodeAcController     = 268
 )
 
 // DeviceEventType
