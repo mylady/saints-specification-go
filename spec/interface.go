@@ -127,6 +127,7 @@ const (
 	InterfaceCodeTengDaEnvMonistorMQTT             = 121
 	InterfaceCodeTengDaRFIDREST                    = 122
 	InterfaceCodeMeiDiACModbusTCPV5                = 123
+	InterfaceCodeHaiKangVideoSDKV2                 = 124
 
 	InterfaceCodeSaintsDoor = 10001
 )
