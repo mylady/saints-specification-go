@@ -72,8 +72,11 @@ type Face struct {
 	PersonID      string  `json:"person_id"`
 	PersonName    string  `json:"person_name"`
 	Similarity    float32 `json:"similarity"`
+	RepoID        string  `json:"repo_id"`
 	FaceImage     string  `json:"face_image"`
 	FaceImagePath string  `json:"face_image_path"`
+	RepoImage     string  `json:"repo_image"`
+	RepoImagePath string  `json:"repo_image_path"`
 }
 
 // CarPlate :value for car

@@ -128,6 +128,8 @@ const (
 	InterfaceCodeTengDaRFIDREST                    = 122
 	InterfaceCodeMeiDiACModbusTCPV5                = 123
 	InterfaceCodeHaiKangVideoSDKV2                 = 124
+	InterfaceCodeHeShiVideoAnalyseActiveMQV2       = 125
+	InterfaceCodeJiaoDaJingGongDoorHTTPV2          = 126
 
 	InterfaceCodeSaintsDoor = 10001
 )
