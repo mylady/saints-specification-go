@@ -130,6 +130,9 @@ const (
 	InterfaceCodeHaiKangVideoSDKV2                 = 124
 	InterfaceCodeHeShiVideoAnalyseActiveMQV2       = 125
 	InterfaceCodeJiaoDaJingGongDoorHTTPV2          = 126
+	InterfaceCodeZhongGuoDianZiHTTPServer          = 127
+	InterfaceCodeTengDaRelayMQTT                   = 128
+	InterfaceCodeTengDaAcMQTT                      = 129
 
 	InterfaceCodeSaintsDoor = 10001
 )
