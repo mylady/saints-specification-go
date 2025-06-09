@@ -134,6 +134,10 @@ const (
 	InterfaceCodeTengDaRelayMQTT                   = 128
 	InterfaceCodeTengDaAcMQTT                      = 129
 
+	InterfaceCodeKuaiYuAudioAnalyseMQ                  = 130
+	InterfaceCodeKuangShiFaceRecognitionHTTPServerV3   = 131
+	InterfaceCodeShangTangFaceRecognitionBoxHTTPServer = 132
+
 	InterfaceCodeSaintsDoor = 10001
 )
 
