@@ -35,6 +35,8 @@ const (
 	ResourceCodeRelayHost        = 266
 	ResourceCodeVideoGBServer    = 267
 	ResourceCodeACController     = 268
+
+	ResourceCodeServer = 512
 )
 
 // DeviceEventType

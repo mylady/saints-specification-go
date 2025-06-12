@@ -137,6 +137,7 @@ const (
 	InterfaceCodeKuaiYuAudioAnalyseMQ                  = 130
 	InterfaceCodeKuangShiFaceRecognitionHTTPServerV3   = 131
 	InterfaceCodeShangTangFaceRecognitionBoxHTTPServer = 132
+	InterfaceCodeHanWeiDeviceMonitorREST               = 133
 
 	InterfaceCodeSaintsDoor = 10001
 )
